@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "movies:import": "node config/moviesDbSeeder",
-    "movies:destroy": "node config/moviesDbSeeder -d",
-    "genres:import": "node config/genresDbSeeder",
-    "genres:destroy": "node config/genresDbSeeder -d"
+    "movies:import": "node config/seeders/moviesDbSeeder",
+    "movies:destroy": "node config/seeders/moviesDbSeeder -d",
+    "genres:import": "node config/seeders/genresDbSeeder",
+    "genres:destroy": "node config/seeders/genresDbSeeder -d"
   },
   "repository": {
     "type": "git",

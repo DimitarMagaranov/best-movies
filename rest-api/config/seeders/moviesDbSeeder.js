@@ -9,6 +9,8 @@ const importMovies = async () => {
 	try {
 		await movie.deleteMany();
 
+		movies = movies.map(obj => ({ ...obj, userId: "6383a3fd1ed150061090957d" }));
+
 		await movie.insertMany(movies);
 
 		console.log('Data Imported');

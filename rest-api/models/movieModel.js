@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
 
 const movieSchema = new mongoose.Schema({
+    userId: {
+        type: ObjectId,
+        ref: "User",
+        required: true
+    },
     ranking: {
         type: String
     },

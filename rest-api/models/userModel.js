@@ -36,15 +36,18 @@ const userSchema = new mongoose.Schema({
             message: props => `${props.value} must contains only latin letters and digits!`
         },
     },
-    themes: [{
-        type: ObjectId,
-        ref: "Theme"
-    }],
-    posts: [{
-        type: ObjectId,
-        ref: "Post"
-    }],
+    roles: {
+        type: [{
+            type: String,
+            enum: ['user', 'admin']
+        }],
+        default: ['user']
+    },
     movies: [{
+        type: ObjectId,
+        ref: "Movie"
+    }],
+    savedMovies: [{
         type: ObjectId,
         ref: "Movie"
     }]
