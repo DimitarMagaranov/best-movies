@@ -1,5 +1,5 @@
-const movies = require('../data/movies.js');
-const movie = require('../models/movieModel.js');
+const movies = require('../../data/movies.js');
+const movie = require('../../models/movieModel.js');
 
 const dbConnector = require('./db');
 

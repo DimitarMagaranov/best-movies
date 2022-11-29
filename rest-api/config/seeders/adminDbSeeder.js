@@ -1,7 +1,7 @@
-const adminData = require('../data/admin');
-const model = require('../models/userModel');
+const adminData = require('../../data/admin');
+const model = require('../../models/userModel');
 
-const dbConnector = require('./db');
+const dbConnector = require('../db');
 
 dbConnector();
 

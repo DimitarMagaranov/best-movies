@@ -1,5 +1,5 @@
-const genres = require('../data/genres.js');
-const genre = require('../models/genreModel.js');
+const genres = require('../../data/genres');
+const genre = require('../../models/genreModel.js');
 
 const dbConnector = require('./db');
 
