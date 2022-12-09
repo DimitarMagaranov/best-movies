@@ -13,7 +13,7 @@ export interface IMovie {
     country: string;
     poster: string;
     trailerLink: string;
-    imdbRating: string;
+    imdbRating: number;
     imdbID: string;
     userId: string;
     created_at: string;

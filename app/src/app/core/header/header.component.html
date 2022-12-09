@@ -1,4 +1,12 @@
-<header>
+<header class="header">
+  <img routerLink="/" src="/assets/best-movies-logo.png" alt="" />
+  <div class="auth-btns">
+    <button class="btn">Log In</button>
+    <button class="btn">Sign In</button>
+  </div>
+</header>
+
+<!-- <header>
     <div class="mini-navbar-wrap">
       <div class="logo-wrap">
         <p class="logo"><span class="logo">SoftUni Forum</span></p>
@@ -6,18 +14,16 @@
   
       <div class="mini-navbar">
 
-        <ng-template #loggedOutTemplate>
-            <ul>
-              <li>
-                <a routerLink="/auth/login">Login</a>
-              </li>
-              <li>
-                <a routerLink="/auth/register">Register</a>
-              </li>
-            </ul>
-          </ng-template>
-  
-        <!-- <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
+        <ul>
+          <li>
+            <a routerLink="/auth/login">Login</a>
+          </li>
+          <li>
+            <a routerLink="/auth/register">Register</a>
+          </li>
+        </ul> -->
+
+<!-- <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
   
         <ng-template #loggedOutTemplate>
           <ul>
@@ -40,7 +46,7 @@
             </li>
           </ul>
         </ng-template> -->
-  
+<!--   
       </div>
   
     </div>
@@ -58,4 +64,4 @@
       </ul>
     </nav>
   </header>
-  
+   -->

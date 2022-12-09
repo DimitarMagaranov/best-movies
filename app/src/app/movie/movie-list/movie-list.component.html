@@ -1,5 +1,10 @@
 <!-- <div *ngIf="errorFetchingData">Error loading movies</div> -->
 <!-- {{movieList | json}} -->
-<div [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of movieList">{{movie.title}}
-
+<div class="list">
+    <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of movieList">
+        <!-- {{movie.ranking}}  -  {{movie.title}} -->
+        <div class="img-ctr">
+            <img src={{movie.poster}} alt="">
+        </div>
+    </div>
 </div>

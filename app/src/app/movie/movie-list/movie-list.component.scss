@@ -1,0 +1,28 @@
+.list {
+    padding:3.5rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list .list-item {
+    width: 350px;
+    height: 600px;
+    
+    cursor: pointer;
+    transform: scale(1);
+    bottom: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.list .list-item:hover {
+    transform: scale(1.1);
+    bottom: 0.125rem;
+}
+
+.list .list-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}

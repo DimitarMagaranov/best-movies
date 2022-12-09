@@ -1,7 +1,7 @@
-const movies = require('../../data/movies.js');
+let movies = require('../../data/movies.js');
 const movie = require('../../models/movieModel.js');
 
-const dbConnector = require('./db');
+const dbConnector = require('../db');
 
 dbConnector();
 

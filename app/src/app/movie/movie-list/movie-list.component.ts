@@ -14,15 +14,18 @@ export class MovieListComponent implements OnInit {
 
   constructor(private apiService: ApiService) { }
 
-  getMovieDetailsHandler() {
-    console.log();
-    
-  }
-
   ngOnInit(): void {
     this.apiService.loadMovies().subscribe({
       next: (value) => {
-        this.movieList = value;
+        this.movieList = value.sort((a, b) => {
+          if(a.imdbRating < b.imdbRating) {
+            return 1;
+          } else if(a.imdbRating > b.imdbRating) {
+            return -1;
+          } else {
+            return 0;
+          }
+        })
       },
       error: (err) => {
         this.errorFetchingData = true;
@@ -30,5 +33,4 @@ export class MovieListComponent implements OnInit {
       }
     })
   }
-
 }

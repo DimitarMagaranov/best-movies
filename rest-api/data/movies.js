@@ -62,7 +62,7 @@ const movies = [
     country: "USA",
     awards: "Won 3 Oscars. Another 24 wins & 27 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BY2Q2NzQ3ZDUtNWU5OC00Yjc0LThlYmEtNWM3NTFmM2JiY2VhXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UY562_CR8,0,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY5OTE4MDM5N15BMl5BanBnXkFtZTcwNDAyMDg0Nw@@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=sY1S34973zA",
@@ -108,7 +108,7 @@ const movies = [
     country: "USA",
     awards: "Won 6 Oscars. Another 11 wins & 20 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMjZiNzIxNTQtNDc5Zi00YWY1LThkMTctMDgzYjY4YjI1YmQyL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UY562_CR7,0,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTQyMDc0ODY1OV5BMl5BanBnXkFtZTgwMDI4NjIwMjE@._V1_SX1282_CR0,0,1282,999_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=9O1Iy9od7-A",
@@ -290,7 +290,7 @@ const movies = [
     country: "USA, New Zealand",
     awards: "Won 11 Oscars. Another 197 wins & 122 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BYWY1ZWQ5YjMtMDE0MS00NWIzLWE1M2YtODYzYTk2OTNlYWZmXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,0,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BODk1MzkwNTA4N15BMl5BanBnXkFtZTgwOTU1ODY3MjI@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=r5X-hFf6Bwo",
@@ -427,7 +427,7 @@ const movies = [
     country: "USA, Germany",
     awards: "Nominated for 1 Oscar. Another 10 wins & 34 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMzFjMWNhYzQtYTIxNC00ZWQ1LThiOTItNWQyZmMxNDYyMjA5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX380_CR0,1,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTM4MjA2MzI0OF5BMl5BanBnXkFtZTcwNjU3ODMzMw@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=SUXWAEX2jlg",
@@ -656,7 +656,7 @@ const movies = [
     country: "USA, New Zealand",
     awards: "Won 2 Oscars. Another 118 wins & 137 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BMDY0NmI4ZjctN2VhZS00YzExLTkyZGItMTJhOTU5NTg4MDU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BZGMxZTdjZmYtMmE2Ni00ZTdkLWI5NTgtNjlmMjBiNzU2MmI5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,14,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BODk1MzkwNTA4N15BMl5BanBnXkFtZTgwOTU1ODY3MjI@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=LbfMDwc4azU",
@@ -748,7 +748,7 @@ const movies = [
     country: "USA",
     awards: "Won 1 Oscar. Another 43 wins & 37 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BNThjMzczMjctZmIwOC00NTQ4LWJhZWItZDdhNTk5ZTdiMWFlXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,3,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTQ5MDk3MTE4OV5BMl5BanBnXkFtZTcwMzEyNDY3Mw@@._V1_SY1000_CR0,0,1502,1000_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=h3QpxNI-PtE",
@@ -839,7 +839,7 @@ const movies = [
     country: "Japan",
     awards: "Nominated for 2 Oscars. Another 5 wins & 6 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BMTc5MDY1MjU5MF5BMl5BanBnXkFtZTgwNDM2OTE4MzE@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTctZjczMi00OTk4LTg3NWUtNmVhMTAzNTNjYjcyXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UX380_CR0,16,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BODIzY2U2NTYtNjVjOC00MmI1LTg0YWYtMGUyZmU1ZjRhYmJlXkEyXkFqcGdeQXVyNzc5NjM0NA@@._V1_SY1000_CR0,0,1333,1000_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=bBfgNpSQm3I",
@@ -884,7 +884,7 @@ const movies = [
     country: "USA",
     awards: "Won 6 Oscars. Another 50 wins & 28 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BOTA5NjhiOTAtZWM0ZC00MWNhLThiMzEtZDFkOTk2OTU1ZDJkXkEyXkFqcGdeQXVyMTA4NDI1NTQx._V1_QL75_UX380_CR0,9,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNDY0NjY4Nl5BMl5BanBnXkFtZTgwNjY4MTQ0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=vP_1T4ilm8M",
@@ -1204,7 +1204,7 @@ const movies = [
     country: "Japan",
     awards: "Won 1 Oscar. Another 56 wins & 27 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BOGJjNzZmMmUtMjljNC00ZjU5LWJiODQtZmEzZTU0MjBlNzgxL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX380_CR0,0,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMzI1NDk0MzEzN15BMl5BanBnXkFtZTcwOTE0MjIyNw@@._V1_SX1777_CR0,0,1777,959_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=ByXuk9QqQkk",
@@ -1475,7 +1475,7 @@ const movies = [
     country: "USA",
     awards: "Nominated for 4 Oscars. Another 5 wins & 9 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BOWQ0MjRmZmUtY2Q2Yi00ODcxLWE4NGMtMTNjMDY1YmUzMjVkXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
+      "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiohn42YYfOYwmfZKweQdl74FXLr1BjVYo60kxyxoP0dFaMN3w",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTQxNzU5NTY4N15BMl5BanBnXkFtZTgwMjc4MDU3MTE@._V1_SY1000_CR0,0,834,1000_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=Wz719b9QUqY",
@@ -1566,7 +1566,7 @@ const movies = [
     country: "USA",
     awards: "3 wins.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BZDRjMmI3ZjgtMGE3Mi00NjY5LTg0NWMtMmU3YzgyMjhmMjIzL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BY2I4MmM1N2EtM2YzOS00OWUzLTkzYzctNDc5NDg2N2IyODJmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,4,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BNTIzODMwODU2NF5BMl5BanBnXkFtZTcwNzY3NzE5Ng@@._V1_SX1353_CR0,0,1353,999_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=b2NTUnujk1I",
@@ -2016,7 +2016,7 @@ const movies = [
     country: "USA",
     awards: "Won 3 Oscars. Another 89 wins & 136 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BOTVhMWQ5MDktMGE3OS00MjVlLWExZWYtMzY2MTg4ZGFiZDQ5L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMjAxOS00YTRkLTkwYmMtYWQ0NWEwZDZiNjEzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX380_CR0,0,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNzAzMjY0NF5BMl5BanBnXkFtZTgwOTE4NTgyMjE@._V1_CR0,59,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=7d_jQycdQGo",
@@ -2245,7 +2245,7 @@ const movies = [
     country: "USA",
     awards: "Won 2 Oscars. Another 18 wins & 31 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BMDg1MDgzMmQtNDhlYS00MzZiLTllZGItNzliZTE1ODBiZDQwXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BYmQyNTA1ZGItNjZjMi00NzFlLWEzMWEtNWMwN2Q2MjJhYzEyXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX380_CR0,11,380,562_.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BOTc5NTE5ODcyOF5BMl5BanBnXkFtZTgwMzM3MjIyMzE@._V1_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=IkrhkUeDCdQ",
@@ -2293,7 +2293,7 @@ const movies = [
     country: "UK, USA",
     awards: "Won 1 Oscar. Another 16 wins & 19 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "https://pics.filmaffinity.com/alien-657278575-large.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc4OTYzNjc2MV5BMl5BanBnXkFtZTgwNDA2MzIzMzE@._V1_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=LjLamj-b0I8",
@@ -2555,7 +2555,7 @@ const movies = [
     country: "Germany",
     awards: "Won 1 Oscar. Another 75 wins & 34 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BNDUzNjYwNDYyNl5BMl5BanBnXkFtZTcwNjU3ODQ0MQ@@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BNmQyNmJjM2ItNTQzYi00ZjMxLWFjMDYtZjUyN2YwZDk5YWQ2XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX380_CR0,3,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTM4OTY1MzQwNV5BMl5BanBnXkFtZTYwNzkxMTg2._V1_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=n3_iLOp6IhM",
@@ -3053,7 +3053,7 @@ const movies = [
     country: "USA",
     awards: "Won 2 Oscars. Another 18 wins & 22 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BYzVlMWViZGEtYjEyYy00YWZmLThmZGEtYmM4MDZlN2Q5MmRmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BZGU2OGY5ZTYtMWNhYy00NjZiLWI0NjUtZmNhY2JhNDRmODU3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX380_CR0,14,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTc0NDcwMjY3MV5BMl5BanBnXkFtZTgwMTEwNzc5OTE@._V1_SX1334_CR0,0,1334,999_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=XKSQmYUaIyE",
@@ -3902,7 +3902,7 @@ const movies = [
     country: "USA",
     awards: "Nominated for 7 Oscars. Another 2 wins & 2 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BZmRmYmZkZTktZDc5ZC00ZjZmLTg4NWMtYjM3MjcyNTVjNGQ5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Double_Indemnity_%281944_poster%29.jpg/800px-Double_Indemnity_%281944_poster%29.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTIxMDc1NzUyNV5BMl5BanBnXkFtZTYwNTQ5MjM2._V1_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=S3wjJcuGsVE",
@@ -3947,7 +3947,7 @@ const movies = [
     country: "USA",
     awards: "Nominated for 4 Oscars. Another 21 wins & 15 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BNGQxNDgzZWQtZTNjNi00M2RkLWExZmEtNmE1NjEyZDEwMzA5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+      "https://cdn.shopify.com/s/files/1/1416/8662/products/taxi_driver_1976_original_film_art_5000x.jpg?v=1655317511",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTg1NzcxNTgyN15BMl5BanBnXkFtZTgwMTMwNzIwMjE@._V1_SY1000_CR0,0,1340,1000_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=cujiHDeqnHY",
@@ -4083,7 +4083,7 @@ const movies = [
     country: "India",
     awards: "26 wins & 13 nominations.",
     poster:
-      "https://ia.media-imdb.com/images/M/MV5BZWRlNDdkNzItMzhlZC00YTdmLWIwNjktYjY5NjQ1ZmQ3N2FkXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://m.media-amazon.com/images/M/MV5BNTkyOGVjMGEtNmQzZi00NzFlLTlhOWQtODYyMDc2ZGJmYzFhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_QL75_UY562_CR5,0,380,562_.jpg",
     trailerPoster:
       "https://ia.media-imdb.com/images/M/MV5BMTk2MzkxMDk0NF5BMl5BanBnXkFtZTcwOTg0NDMwNQ@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=xvszmNXdM4w",
@@ -4129,7 +4129,7 @@ const movies = [
     country: "USA",
     awards: "Won 3 Oscars. Another 10 wins & 16 nominations.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BN2YxZDUxYzMtYzQxNy00NTRjLThmZjQtY2Q4Njg2MTUyOTkzL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+      "https://image.tmdb.org/t/p/w500/gZycFUMLx2110dzK3nBNai7gfpM.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BODU2MTIxNTE0NF5BMl5BanBnXkFtZTcwMjI2NzM4NA@@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=KR7loA_oziY",
@@ -4357,7 +4357,7 @@ const movies = [
     country: "Italy",
     awards: "Nominated for 1 Oscar. Another 18 wins.",
     poster:
-      "https://images-na.ssl-images-amazon.com/images/M/MV5BOTI3NTcwNzEtNDA1MS00ZjE0LThkNDEtMmU4MjVmNTQ1ZDBmXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg",
+      "https://iegap.princeton.edu/wp-content/uploads/2022/05/bicyclethieves.jpg",
     trailerPoster:
       "https://images-na.ssl-images-amazon.com/images/M/MV5BOWE4NmZlMDAtNTBjZi00NDc0LTkyN2UtYTcwZmViYTFmNTEwXkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_CR0,45,480,270_AL_UX477_CR0,0,477,268_AL_.jpg",
     trailerLink: "https://www.youtube.com/watch?v=H3jnzXX9mXs",

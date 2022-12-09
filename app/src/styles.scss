@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/reset.scss';
+// @import './header.css';
+@import './styles/components/button.scss';
+// @import './components/input.css';
+// @import './components/section.css';
+// @import './hero-section.css';
+// @import './section-type-feature.css';
+// @import './faq-section.css';
+// @import './footer.css';
+
+:root {
+    --clr-black: hwb(0 0% 100%);
+    --clr-white: #fff;
+    --clr-primary: #e30813;
+    --clr-grey: #222;
+    --clr-footer-text: #a3a3a3;
+
+    --p-x: 1rem;
+    --p-y: 2rem;
+
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+}
+
+@media screen and (min-width:768px) {
+    :root {
+        --p-x: 2rem;
+        --p-y: 4rem;
+    }
+
+    /* html {
+        font-size: 22px; 
+    } */
+}
+
+@media screen and (min-width:1024px) {
+    html {
+        font-size: 22px; 
+    }
+}
+
+@media screen and (min-width:1440px) {
+    :root {
+        --p-x: 3rem;
+        --p-y: 5rem;
+    }
+
+    html {
+        font-size: 26px; 
+    }
+}
