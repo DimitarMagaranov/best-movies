@@ -12,7 +12,11 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  loadMovies() {
+  loadMovies(currPage: string) {
+    return this.httpClient.get<IMovie[]>(`${apiURL}/movies?page=${currPage}`);
+  }
+
+  loadAllMovies() {
     return this.httpClient.get<IMovie[]>(`${apiURL}/movies`);
   }
 

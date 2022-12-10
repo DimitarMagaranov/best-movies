@@ -26,3 +26,28 @@
     height: 100%;
     border-radius: 20px;
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pagination li {
+    float: left;
+  }
+  
+  .pagination a {
+    cursor: pointer;
+    color: var(--clr-white);
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+  }
+  
+  .pagination a.active {
+    background-color: var(--clr-primary);
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}

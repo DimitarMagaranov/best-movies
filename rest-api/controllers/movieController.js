@@ -1,3 +1,5 @@
+const paginate = require("jw-paginate");
+
 const { movieModel, userModel } = require("../models/index");
 
 function getMovies(req, res, next) {
@@ -6,6 +8,25 @@ function getMovies(req, res, next) {
     .populate("userId")
     .then((movies) => res.json(movies))
     .catch(next);
+};
+
+function getMoviesWithPagination(req, res, next) {
+  let movies = movieModel
+  .find()
+  .populate("userId")
+  .then((data) => {
+    movies = data;
+    const page = parseInt(req.query.page) || 1;
+
+    const pageSize = 16;
+
+    const pager = paginate(movies.length, page, pageSize);
+
+    const pageOfItems = Array.from(movies).slice(pager.startIndex, pager.endIndex + 1);
+
+    res.json({pager, pageOfItems});
+  })
+  .catch(next);
 };
 
 function getMovie(req, res, next) {
@@ -67,5 +88,6 @@ module.exports = {
     getMovie,
     createMovie,
     editMovie,
-    deleteMovie
+    deleteMovie,
+    getMoviesWithPagination
 }

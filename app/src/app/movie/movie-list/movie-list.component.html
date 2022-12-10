@@ -1,10 +1,38 @@
 <!-- <div *ngIf="errorFetchingData">Error loading movies</div> -->
 <!-- {{movieList | json}} -->
-<div class="list">
+<!-- <div class="list">
     <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of movieList">
-        <!-- {{movie.ranking}}  -  {{movie.title}} -->
+        <div class="img-ctr">
+            <img src={{movie.poster}} alt="">
+        </div>
+    </div>
+</div> -->
+
+<div class="list">
+    <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of pageOfItems" >
         <div class="img-ctr">
             <img src={{movie.poster}} alt="">
         </div>
     </div>
 </div>
+
+<div class="pagination">
+        <ul role="list" *ngIf="pager?.pages && pager?.pages?.length">
+            <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item first-item">
+                <a (click)="setPage(1)" class="page-link">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item previous-item">
+                <a (click)="setPage(pager.currentPage - 1)" class="page-link">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}"
+                class="page-item number-item">
+                <a (click)="setPage(page)" class="page-link">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item next-item">
+                <a (click)="setPage(pager.currentPage + 1)" class="page-link">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item last-item">
+                <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
+            </li>
+        </ul>
+    </div>
