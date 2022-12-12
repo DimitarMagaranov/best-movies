@@ -1,0 +1,52 @@
+
+<ng-container *ngTemplateOutlet="showEditMode ? editProfileContainer : profileInfoContainer"></ng-container>
+
+<ng-template #profileInfoContainer>
+    <div class="profile">
+        <img src="/assets/profile.png" alt="default user">
+    
+        <h3>User Info:</h3>
+        <div class="flex">
+            <p>Username: </p>
+            <p>{{user.username}}</p>
+        </div>
+        <div class="flex">
+            <p>Email: </p>
+            <p>{{user.email}}</p>
+        </div>
+        <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+    </div>
+</ng-template>
+
+<ng-template #editProfileContainer>
+    <div class="profile">
+        <img src="/assets/profile.png" alt="default user">
+        <h3>User Info:</h3>
+        <form [formGroup]="form" (ngSubmit)="saveNewInfo()">
+            <div class="flex">
+                <p>Username: </p>
+                <input type="text" formControlName="username" id="username">
+            </div>
+            <ng-container *ngIf="form.get('username')?.touched || formSubmited">
+                <p *ngIf="form.get('username')?.errors?.['required']" class="error">
+                  Username is required!
+                </p>
+                <p *ngIf="form.get('username')?.errors?.['minlength']" class="error">
+                  Username should be longer than 5 chars
+                </p>
+              </ng-container>
+            <div class="flex">
+                <p>Email: </p>
+                <input type="email" formControlName="email" id="email">
+            </div>
+            <ng-container *ngIf="form.get('email')?.touched || formSubmited">
+                <p *ngIf="form.get('email')?.errors?.['required']" class="error">Email is required!</p>
+                <p *ngIf="form.get('email')?.errors?.['appEmailValidator']" class="error">Email is not valid!</p>
+            </ng-container>
+            <div class="btns-ctr">
+                <button class="red-button" type="button" (click)="toggleEditMode()">Cancel</button>
+            <button class="green-button" type="submit" [disabled]="form.invalid">Save</button>
+            </div>
+        </form>
+    </div>
+</ng-template>

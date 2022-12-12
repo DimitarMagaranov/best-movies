@@ -50,6 +50,10 @@ const userSchema = new mongoose.Schema({
     savedMovies: [{
         type: ObjectId,
         ref: "Movie"
+    }],
+    savedMovies: [{
+        type: ObjectId,
+        ref: "Movie"
     }]
 }, { timestamps: { createdAt: 'created_at' } });
 

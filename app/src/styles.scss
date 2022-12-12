@@ -1,3 +1,5 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
 @import './styles/reset.scss';
 // @import './header.css';
 @import './styles/components/button.scss';
@@ -14,19 +16,23 @@
     --clr-primary: #e30813;
     --clr-grey: #222;
     --clr-footer-text: #a3a3a3;
+    --clr-star: #ffd700;
 
     --p-x: 1rem;
     --p-y: 2rem;
 
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-
+    --white-shadow-xl: rgba(255, 255, 255, 0.12) 0px 4px 32px 0px, rgba(255, 255, 255, 0.32) 0px 4px 32px 0px;
+    --white-shadow-form: rgba(255, 255, 255, 0.6) 0px 8px 64px 0px, rgba(255, 255, 255, 0.16) 0px 8px 64px 0px;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--clr-black);
     color: var(--clr-white);
+    
+    // padding: 3.5rem 3rem;
 }
 
 @media screen and (min-width:768px) {

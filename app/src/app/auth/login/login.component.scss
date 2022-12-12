@@ -1,0 +1,92 @@
+/*login register forms  */
+
+form.login, form.register {
+    width: 30%;
+    margin: 3.5rem auto;
+    text-align: center;
+}
+
+.login fieldset, .register fieldset {
+    border: 3px solid var(--clr-primary);
+    border-radius: 20px;
+    padding: 2em;
+    background-color: #f3f3f3;
+    box-shadow: var(--white-shadow-form);
+}
+
+.login h2, .register h2 {
+    color: var(--clr-primary);
+}
+
+.login p, .register p {
+    padding-top: 1.5rem;
+}
+
+.login input, .register input {
+    flex: 0 1 100%;
+    border: 1px solid var(--clr-primary);
+    padding: 0.3em;
+    border-left: 0.3em solid var(--clr-primary);
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+.login select, .register select {
+    border-color: black;
+}
+
+.login .btn-ctr, .register .btn-ctr {
+    margin-top: 1.5rem;
+}
+
+.login button, .register button {
+    background-color: var(--clr-primary);
+    border: 2px solid var(--clr-primary);
+    color: var(--clr-white);
+    border-radius: 0.25rem;
+    padding: 0.125rem 1.5rem;
+    cursor: pointer;
+    bottom: 0;
+    box-shadow: var(--shadow-md);
+}
+
+.login i, .register i {
+    padding: 0.55em;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    background-color: rgb(149, 149, 149);
+}
+
+.login .text-center, .register .text-center {
+    color: rgb(117, 117, 117);
+}
+
+.login a, .register a {
+    color: #007bff;
+}
+
+.login a:hover, .register a:hover {
+    cursor: pointer;
+}
+
+.register .tel {
+    padding-right: 0.8em;
+}
+
+.login .field, .register .field {
+    display: flex;
+    padding-bottom: 0;
+}
+
+/* errors  */
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.input-error {
+    border-left-color: red;
+}

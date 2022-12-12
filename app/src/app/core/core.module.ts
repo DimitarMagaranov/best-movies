@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { YtPlayerComponent } from './yt-player/yt-player.component';
+import {YouTubePlayerModule} from '@angular/youtube-player';
 
 
 
@@ -13,17 +15,20 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    YtPlayerComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    YouTubePlayerModule
   ],
   exports: [
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    YtPlayerComponent
   ]
 })
 export class CoreModule { }

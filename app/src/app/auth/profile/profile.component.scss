@@ -1,0 +1,97 @@
+.profile {
+    width: 100%;
+    max-width: 650px;
+    margin: 3.5rem auto;
+    padding: 2em;
+    border: 3px solid var(--clr-primary);
+    border-radius: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+    background-color: #f3f3f3;
+    box-shadow: var(--white-shadow-form);
+    text-align: center;
+}
+
+.profile h3 {
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+.profile img {
+    width: 7em;
+    height: 7em;
+    margin: auto;
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex p:first-child {
+    width: 35%;
+    text-align: right;
+    margin: .5em;
+}
+
+.flex p:last-child {
+    width: 55%;
+    text-align: left;
+    margin: .5em;
+    font-weight: bold;
+}
+
+.profile button {
+    color: white;
+    border: none;
+    border-radius: 0.3em;
+    padding: 0.6em 1.2em;
+    outline: none;
+}
+
+.flex > input, .flex > div {
+    width: 55%;
+    text-align: left;
+    margin: .5em;
+}
+
+.flex > div > input {
+    width: 77%;
+}
+
+.flex select {
+    padding: 0.17em 0;
+}
+
+.btns-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.red-button {
+    background-color: red;
+}
+
+.green-button {
+    background-color: green;
+}
+
+.edit-button {
+    background-color: var(--clr-primary);
+    cursor: pointer;
+}
+
+/* errors  */
+
+p.error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: red;
+    padding-top: 0;
+}
+
+.input-error {
+    border-left-color: red;
+}

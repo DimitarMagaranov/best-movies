@@ -1,1 +1,40 @@
-<div *ngIf="movie">{{movie.title}}</div>
+<div id="details">
+    <section id="movie-details" *ngIf="movie">
+        <div class="header">
+            <div class="title-ctr">
+                <h1 class="title">{{movie.title}}</h1>
+                <div class="imdb-rating-ctr">
+                    <p>IMDB rating: </p>
+                    <i class="fas fa-star"></i>
+                    <p>{{movie.imdbRating}}/10</p>
+                </div>
+            </div>
+            <div class="save-year">
+                <i class="far fa-bookmark"></i>
+                <!-- <i class="far fa-bookmark" (click)="toggleMyClass()" [ngClass]="{ 'bookmark-class': bookmarkClass }"></i> -->
+                <p>Year: {{movie.year}}</p>
+            </div>
+        </div>
+    
+    </section>
+    
+    <section *ngIf="movie">
+        <div class="img-desc-ctr">
+            <img class="image" src="{{movie.poster}}" alt="">
+    
+            <div class="description">
+                <p class="plot">{{movie.plot}}</p>
+                <div class="divider"></div>
+                <p class="genres">Genre: </p>
+                <div class="divider"></div>
+                <p class="writers">Writers: {{movie.writer}}</p>
+                <div class="divider"></div>
+                <p class="director">Director: {{movie.director}}</p>
+                <div class="divider last"></div>
+                <a *ngIf="movie.imdbID" class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+            </div>
+        </div>
+    
+        <app-yt-player [videoID]="trailerId"></app-yt-player>
+    </section>
+</div>

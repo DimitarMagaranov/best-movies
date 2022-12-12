@@ -1,6 +1,7 @@
 export interface IUser {
     username: string;
     movies: string[];
+    savedMovies: string[];
     _id: string;
     tel: string;
     email: string;

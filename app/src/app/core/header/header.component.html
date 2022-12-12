@@ -1,67 +1,19 @@
 <header class="header">
-  <img routerLink="/" src="/assets/best-movies-logo.png" alt="" />
-  <div class="auth-btns">
-    <button class="btn">Log In</button>
-    <button class="btn">Sign In</button>
+  <img id="logo" routerLink="/" src="/assets/best-movies-logo.png" alt="" />
+
+  <div class="mini-navbar">
+    <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
+
+    <ng-template #loggedOutTemplate>
+      <a class="btn" routerLink="/auth/login">Log In</a>
+      <a class="btn" routerLink="/auth/register">Sign In</a>
+    </ng-template>
+
+    <ng-template #loggedInTemplate>
+      <a class="btn-new-movie" role="button" routerLink="/movies/new">Add movie</a>
+      <a class="btn" routerLink="/auth/profile">{{user?.username}}'s profile</a>
+      <a class="btn" routerLink="/auth/logout">Logout</a>
+    </ng-template>
   </div>
+
 </header>
-
-<!-- <header>
-    <div class="mini-navbar-wrap">
-      <div class="logo-wrap">
-        <p class="logo"><span class="logo">SoftUni Forum</span></p>
-      </div>
-  
-      <div class="mini-navbar">
-
-        <ul>
-          <li>
-            <a routerLink="/auth/login">Login</a>
-          </li>
-          <li>
-            <a routerLink="/auth/register">Register</a>
-          </li>
-        </ul> -->
-
-<!-- <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
-  
-        <ng-template #loggedOutTemplate>
-          <ul>
-            <li>
-              <a routerLink="/auth/login">Login</a>
-            </li>
-            <li>
-              <a routerLink="/auth/register">Register</a>
-            </li>
-          </ul>
-        </ng-template>
-  
-        <ng-template #loggedInTemplate>
-          <ul>
-            <li>
-              <a routerLink="/auth/profile">{{ user?.username }}'s profile</a>
-            </li>
-            <li>
-              <a routerLink="/auth/logout">Logout</a>
-            </li>
-          </ul>
-        </ng-template> -->
-<!--   
-      </div>
-  
-    </div>
-    <nav>
-      <ul>
-        <li>
-          <a routerLink="/">Home</a>
-        </li>
-        <li>
-          <a routerLink="/movies/all">Movies</a>
-        </li>
-        <li>
-          <a routerLink="/movies/new">New Movie</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-   -->

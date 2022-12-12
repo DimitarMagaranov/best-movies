@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IMovie } from './shared/interfaces/movie';
-import { environment } from '../environments/environment';
-
-const apiURL = environment.apiURL;
 
 @Injectable({
   providedIn: 'root'
@@ -13,14 +10,14 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   loadMovies(currPage: string) {
-    return this.httpClient.get<IMovie[]>(`${apiURL}/movies?page=${currPage}`);
+    return this.httpClient.get<IMovie[]>(`/api/movies?page=${currPage}`); 
   }
 
   loadAllMovies() {
-    return this.httpClient.get<IMovie[]>(`${apiURL}/movies`);
+    return this.httpClient.get<IMovie[]>(`/api/movies`);
   }
 
   loadMovieById(id: string) {
-    return this.httpClient.get<IMovie>(`${apiURL}/movies/${id}`);
+    return this.httpClient.get<IMovie>(`/api/movies/${id}`);
   }
 }

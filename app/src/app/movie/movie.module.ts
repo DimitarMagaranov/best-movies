@@ -5,6 +5,8 @@ import { MovieRoutingModule } from './movie-routing.module';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieNewComponent } from './movie-new/movie-new.component';
 import { FormsModule } from '@angular/forms';
+import {YouTubePlayerModule} from '@angular/youtube-player';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MovieRoutingModule,
-    FormsModule
+    FormsModule,
+    CoreModule,
+    YouTubePlayerModule,
   ], exports: [
     MovieListComponent,
     MovieDetailsComponent,
