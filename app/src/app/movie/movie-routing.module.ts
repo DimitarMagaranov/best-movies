@@ -5,21 +5,16 @@ import { MovieNewComponent } from "./movie-new/movie-new.component";
 
 const routes: Routes = [
     {
-        path: 'movies',
-        children: [
-            {
-                path: 'all',
-                component: MovieListComponent
-            },
-            {
-                path: 'new',
-                component: MovieNewComponent
-            },
-            {
-                path: 'details/:id',
-                component: MovieDetailsComponent
-            }
-        ]
+        path: 'all',
+        component: MovieListComponent
+    },
+    {
+        path: 'new',
+        component: MovieNewComponent
+    },
+    {
+        path: 'details/:id',
+        component: MovieDetailsComponent
     }
 ];
 
