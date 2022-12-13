@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ApiService } from 'src/app/api.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-movie-details',
@@ -19,7 +20,8 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private cookieService: CookieService
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +45,8 @@ export class MovieDetailsComponent implements OnInit {
         console.log(err);
       },
     });
+
+    // this.clearCookie();
   }
 
   toggleMyClass(): void {}
@@ -61,4 +65,10 @@ export class MovieDetailsComponent implements OnInit {
   getImdbLink(id: string): string {
     return `https://www.imdb.com/title/${id}/?ref_=hm_tpks_tt_i_3_pd_tp1_pbr_ic`;
   }
+
+  // clearCookie() {
+  //   const cookies = this.cookieService.getAll();
+  //   console.log(cookies);
+    
+  // }
 }

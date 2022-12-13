@@ -1,4 +1,7 @@
+//YtPlayerComponent
+
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-yt-player',
@@ -13,11 +16,12 @@ export class YtPlayerComponent implements AfterViewInit {
 
   @Input('videoID') videoID!: string;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef, private cookieService: CookieService) {}
 
   ngAfterViewInit(): void {
     this.onResize();
     window.addEventListener('resize', this.onResize.bind(this));
+    // window.addEventListener('change', this.clearCookie.bind(this));
   }
 
   onResize(): void {
@@ -26,8 +30,16 @@ export class YtPlayerComponent implements AfterViewInit {
       this.youTubePlayer.nativeElement.clientWidth,
       1024
     );
-        // so you keep the ratio
+
+    // so you keep the ratio
     this.videoHeight = this.videoWidth * 0.6;
+
+    
     this.changeDetectorRef.detectChanges();
   }
+
+  // clearCookie() {
+  //   this.cookieService.deleteAll('/', '.youtube.com');
+    
+  // }
 }
