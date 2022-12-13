@@ -1,74 +1,49 @@
-<form #form="ngForm" (ngSubmit)="newMovieHandler(form)">
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="ranking">Ranking:</label>
-        <input type="text" name="ranking" id="ranking" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="year">Year:</label>
-        <input type="text" name="year" id="year" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="released">Released:</label>
-        <input type="text" name="released" id="released" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="runtime">Runtime:</label>
-        <input type="text" name="runtime" id="runtime" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="director">Director:</label>
-        <input type="text" name="director" id="director" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="writer">Writer:</label>
-        <input type="text" name="writer" id="writer" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="plot">Plot:</label>
-        <input type="text" name="plot" id="plot" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="language">Language:</label>
-        <input type="text" name="language" id="language" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="country">Country:</label>
-        <input type="text" name="country" id="country" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="poster">Poster:</label>
-        <input type="text" name="poster" id="poster" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="trailerLink">TrailerLink:</label>
-        <input type="text" name="trailerLink" id="trailerLink" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="imdbRating">ImdbRating:</label>
-        <input type="text" name="imdbRating" id="imdbRating" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="imdbID">ImdbID:</label>
-        <input type="text" name="imdbID" id="imdbID" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="imdbLink">ImdbLink:</label>
-        <input type="text" name="imdbLink" id="imdbLink" #nameInput="ngModel" ngModel>
-    </div>
-    <div>
-        <label for="genres">Genres:</label>
-        <select name="genres" id="genres" ngModel>
-            <option ngValue="genre1">genre 1</option>
-            <option ngValue="genre2">genre 2</option>
-            <option ngValue="genre3">genre 3</option>
-            <option ngValue="genre4">genre 4</option>
-        </select>
-    </div>
-    <div>
-        <button>Submit</button>
-    </div>
-</form>
+<div id="form-ctr">
+    <form #form="ngForm" (ngSubmit)="newMovieHandler(form)">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="year">Year:</label>
+            <input type="text" name="year" id="year" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="director">Director:</label>
+            <input type="text" name="director" id="director" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="writer">Writer:</label>
+            <input type="text" name="writer" id="writer" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="plot">Plot:</label>
+            <input type="text" name="plot" id="plot" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="poster">Poster:</label>
+            <input type="text" name="poster" id="poster" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="trailerLink">TrailerLink:</label>
+            <input type="text" name="trailerLink" id="trailerLink" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="imdbRating">ImdbRating:</label>
+            <input type="number" name="imdbRating" id="imdbRating" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="imdbLink">ImdbLink:</label>
+            <input type="text" name="imdbLink" id="imdbLink" #nameInput="ngModel" ngModel>
+        </div>
+        <div>
+            <label for="genres">Genres:</label>
+            <select multiple name="genres" id="genres" ngModel>
+                <option *ngFor="let genre of genres" [ngValue]="genre._id">{{genre.title}}</option>
+            </select>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</div>

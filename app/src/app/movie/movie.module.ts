@@ -14,7 +14,7 @@ import { CoreModule } from '../core/core.module';
   declarations: [
     MovieListComponent,
     MovieDetailsComponent,
-    MovieNewComponent
+    MovieNewComponent,
   ],
   imports: [
     CommonModule,

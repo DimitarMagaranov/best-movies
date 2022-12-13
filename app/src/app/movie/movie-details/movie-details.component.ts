@@ -36,7 +36,6 @@ export class MovieDetailsComponent implements OnInit {
       next: (value) => {
         this.movie = value;
         this.trailerId = this.getTrailerId(value.trailerLink);
-        console.log(this.trailerId);
       },
       error: (err) => {
         this.errorFetchingData = true;

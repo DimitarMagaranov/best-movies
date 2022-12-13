@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IGenre } from '../shared/interfaces/genre';
 import { IMovie } from '../shared/interfaces/movie';
 
 @Injectable({
@@ -19,5 +20,9 @@ export class MovieService {
 
   loadMovieById(id: string) {
     return this.httpClient.get<IMovie>(`/api/movies/${id}`);
+  }
+
+  loadAllGenres() {
+    return this.httpClient.get<IGenre[]>('/api/genres');
   }
 }
