@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { YtPlayerComponent } from './yt-player/yt-player.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -16,7 +17,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     FooterComponent,
     PageNotFoundComponent,
     HomeComponent,
-    YtPlayerComponent
+    YtPlayerComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import {YouTubePlayerModule} from '@angular/youtube-player';
     HomeComponent,
     FooterComponent,
     PageNotFoundComponent,
-    YtPlayerComponent
+    YtPlayerComponent,
+    ErrorComponent
   ]
 })
 export class CoreModule { }
