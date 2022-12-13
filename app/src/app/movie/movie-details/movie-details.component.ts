@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ApiService } from 'src/app/api.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
-import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-movie-details',
@@ -20,8 +19,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService,
-    private cookieService: CookieService
+    private apiService: ApiService
   ) {}
 
   ngOnInit(): void {

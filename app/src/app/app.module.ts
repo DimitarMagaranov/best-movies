@@ -8,12 +8,13 @@ import { MovieModule } from './movie/movie.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { appInterceptorProvider } from './app.interceptor';
-import {CookieService} from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthenticateComponent
   ],
   imports: [
     AuthModule,
@@ -25,8 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [
-    appInterceptorProvider,
-    CookieService
+    appInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,6 @@
 //YtPlayerComponent
 
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import {CookieService} from 'ngx-cookie-service';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-yt-player',
@@ -16,12 +15,11 @@ export class YtPlayerComponent implements AfterViewInit {
 
   @Input('videoID') videoID!: string;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private cookieService: CookieService) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.onResize();
     window.addEventListener('resize', this.onResize.bind(this));
-    // window.addEventListener('change', this.clearCookie.bind(this));
   }
 
   onResize(): void {
@@ -37,9 +35,4 @@ export class YtPlayerComponent implements AfterViewInit {
     
     this.changeDetectorRef.detectChanges();
   }
-
-  // clearCookie() {
-  //   this.cookieService.deleteAll('/', '.youtube.com');
-    
-  // }
 }
