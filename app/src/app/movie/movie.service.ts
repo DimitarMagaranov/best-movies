@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IMovie } from './shared/interfaces/movie';
+import { IMovie } from '../shared/interfaces/movie';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class MovieService {
 
   constructor(private httpClient: HttpClient) { }
 

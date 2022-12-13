@@ -3,7 +3,7 @@ import {
   ElementRef,
   ViewChildren,
 } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
+import { MovieService } from '../movie.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
 
 @Component({
@@ -24,20 +24,20 @@ export class MovieListComponent {
   };
   pageOfItems: IMovie[] | null = null;
 
-  constructor(private apiService: ApiService) {
+  constructor(private movieService: MovieService) {
     // start on page 1
     this.setPage(
       (localStorage.getItem('currentPage') as unknown as number) || 1
     );
   }
 
-   // constructor(private apiService: ApiService) {
+   // constructor(private movieService: MovieService) {
   //     // start on page 1
   //     // this.setPage(
   //     //   (localStorage.getItem('currentPage') as unknown as number) || 1
   //     // );
 
-  //     this.apiService.loadAllMovies().subscribe({
+  //     this.movieService.loadAllMovies().subscribe({
   //       next: (value) => {
   //         this.movies = value;
   //       },
@@ -54,7 +54,7 @@ export class MovieListComponent {
 
     const currPage = String(localStorage.getItem('currentPage'));
     // get new pager object and page of items from the api
-    this.apiService.loadMovies(currPage).subscribe({
+    this.movieService.loadMovies(currPage).subscribe({
       next: (value: any) => {
         this.pager = value.pager;
         this.pageOfItems = value.pageOfItems;

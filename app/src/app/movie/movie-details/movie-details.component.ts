@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApiService } from 'src/app/api.service';
+import { MovieService } from '../movie.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
 
 @Component({
@@ -19,7 +19,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private apiService: ApiService
+    private movieService: MovieService
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +32,7 @@ export class MovieDetailsComponent implements OnInit {
       return;
     }
 
-    this.apiService.loadMovieById(movieId).subscribe({
+    this.movieService.loadMovieById(movieId).subscribe({
       next: (value) => {
         this.movie = value;
         this.trailerId = this.getTrailerId(value.trailerLink);
