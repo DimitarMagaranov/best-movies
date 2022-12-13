@@ -7,9 +7,6 @@ const movieSchema = new mongoose.Schema({
         ref: "User",
         required: true
     },
-    ranking: {
-        type: String
-    },
     title: {
         type: String,
         required: true
@@ -18,18 +15,6 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    released: {
-        type: String,
-        required: true
-    },
-    runtime: {
-        type: String,
-        required: true
-    },
-    genres: [{
-        type: ObjectId,
-        ref: "Genre"
-    }],
     director: {
         type: String,
         required: true
@@ -39,14 +24,6 @@ const movieSchema = new mongoose.Schema({
         required: true
     },
     plot: {
-        type: String,
-        required: true
-    },
-    language: {
-        type: String,
-        required: true
-    },
-    country: {
         type: String,
         required: true
     },
@@ -60,14 +37,19 @@ const movieSchema = new mongoose.Schema({
     },
     imdbRating: {
         type: Number,
-        required: Number
+        required: true
+    },
+    imdbLink: {
+        type: String,
+        // required: true
     },
     imdbID: {
         type: String
     },
-    imdbLink: {
-        type: String
-    }
+    genres: [{
+        type: ObjectId,
+        ref: "Genre"
+    }]
 }, { timestamps: { createdAt: 'created_at' } });
 
 module.exports = mongoose.model('Movie', movieSchema);
