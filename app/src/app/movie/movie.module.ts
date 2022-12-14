@@ -4,7 +4,7 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieNewComponent } from './movie-new/movie-new.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { CoreModule } from '../core/core.module';
 
@@ -20,6 +20,7 @@ import { CoreModule } from '../core/core.module';
     CommonModule,
     MovieRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CoreModule,
     YouTubePlayerModule,
   ], exports: [

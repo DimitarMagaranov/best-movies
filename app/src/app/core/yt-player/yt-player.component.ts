@@ -1,6 +1,4 @@
-//YtPlayerComponent
-
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-yt-player',
@@ -28,11 +26,8 @@ export class YtPlayerComponent implements AfterViewInit {
       this.youTubePlayer.nativeElement.clientWidth,
       1024
     );
-
-    // so you keep the ratio
+        // so you keep the ratio
     this.videoHeight = this.videoWidth * 0.6;
-
-    
     this.changeDetectorRef.detectChanges();
   }
 }
