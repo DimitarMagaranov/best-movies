@@ -23,8 +23,6 @@ export class MovieDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot.params);
-
     const movieId = this.activatedRoute.snapshot.params['id'];
 
     if (!movieId) {
@@ -42,8 +40,6 @@ export class MovieDetailsComponent implements OnInit {
         console.log(err);
       },
     });
-
-    // this.clearCookie();
   }
 
   toggleMyClass(): void {}

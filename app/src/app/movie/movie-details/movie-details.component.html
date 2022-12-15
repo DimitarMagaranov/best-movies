@@ -25,7 +25,7 @@
             <div class="description">
                 <p class="plot">{{movie.plot}}</p>
                 <div class="divider"></div>
-                <p class="genres">Genre: </p>
+                <p class="genres">Genre: <span><a *ngFor="let genre of movie.genres" routerLink="/movies/byGenre/{{genre._id}}">{{genre.title}}</a></span></p>
                 <div class="divider"></div>
                 <p class="writers">Writers: {{movie.writer}}</p>
                 <div class="divider"></div>

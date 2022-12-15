@@ -35,6 +35,7 @@ function getMovie(req, res, next) {
   movieModel
     .findById(movieId)
     .populate("userId")
+    .populate("genres")
     .then((movies) => res.json(movies))
     .catch(next);
 };
@@ -44,7 +45,7 @@ function createMovie(req, res, next) {
   const { _id: userId } = req.user;
 
   movieModel.create({ ...data, userId }).then((createdMovie) => {
-    res.status(200).send(createdMovie);
+    res.status(200).send(createdMovie.populate("genres"));
   });
 };
 

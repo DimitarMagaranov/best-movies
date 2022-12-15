@@ -15,14 +15,41 @@ export class MovieService {
   }
 
   loadAllMovies() {
-    return this.httpClient.get<IMovie[]>(`/api/movies`);
+    return this.httpClient.get<IMovie[]>(`/api/movies/all`);
   }
 
   loadMovieById(id: string) {
     return this.httpClient.get<IMovie>(`/api/movies/${id}`);
   }
 
+  // loadMoviesByGenreId(id: string) {
+  //   return this.httpClient.get<IMovie[]>(`/api/movies/byGenre/${id}`);
+  // }
+
   loadAllGenres() {
     return this.httpClient.get<IGenre[]>('/api/genres');
   }
+
+  loadGenreById(id: string) {
+    console.log(id);
+    
+    return this.httpClient.get<IGenre>(`/api/genres/${id}`);
+  }
+
+  createMovie(
+    title: string,
+    year: string,
+    director: string,
+    writer: string,
+    poster: string,
+    trailerLink: string,
+    imdbRating: number,
+    imdbLink: string,
+    plot: string,
+    genres: string[]
+  ) {
+    return this.httpClient.post<IMovie>('/api/movies/create', {title, year, director, writer, poster, trailerLink, imdbRating, imdbLink, plot, genres});
+  }
+
+  
 }
