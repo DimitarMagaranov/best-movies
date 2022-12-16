@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {YouTubePlayerModule} from '@angular/youtube-player';
 import { CoreModule } from '../core/core.module';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { MovieListByGenreComponent } from './movie-list-by-genre/movie-list-by-genre.component';
 import { GenreFilterComponent } from './genre-filter/genre-filter.component';
 import { SavedMoviesComponent } from './saved-movies/saved-movies.component';
 
@@ -19,7 +18,6 @@ import { SavedMoviesComponent } from './saved-movies/saved-movies.component';
     MovieListComponent,
     MovieDetailsComponent,
     MovieNewComponent,
-    MovieListByGenreComponent,
     GenreFilterComponent,
     SavedMoviesComponent,
   ],

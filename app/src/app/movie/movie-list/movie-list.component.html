@@ -3,7 +3,7 @@
 
     <div class="list-options">
         <div class="genres-dropdown">
-            <ng-multiselect-dropdown placeholder="Select genre" [settings]="dropdownSettings" [data]="genres" (onSelect)="selectGenreHandler($event)" (onDeSelect)="clearGenreFilter()">
+            <ng-multiselect-dropdown placeholder="Select genre" [settings]="dropdownSettings" class="singleselect" [data]="genres" (onSelect)="selectGenreHandler($event)" (onDeSelect)="clearGenreFilter()">
             </ng-multiselect-dropdown>
         </div>
         <div class="view-select" [ngClass]="{ 'my-class': isListView }">

@@ -1,0 +1,31 @@
+.multiselect-dropdown .dropdown-btn {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: left;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.singleselect .multiselect-item-checkbox {
+  padding: 0px !important;
+}
+.singleselect input[type="checkbox"] + div:before {
+  display: none;
+}
+
+.singleselect input[type="checkbox"] + div:after {
+  display: none;
+}
+
+.singleselect input[type="checkbox"] + div {
+  padding: 6px 10px !important;
+}
+
+.singleselect input[type="checkbox"]:checked + div {
+  background-color: #337ab7 !important;
+  color: #fff !important;
+}
