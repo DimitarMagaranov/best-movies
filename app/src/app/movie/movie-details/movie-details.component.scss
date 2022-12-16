@@ -47,12 +47,32 @@ p {
 
 .img-desc-ctr .description {
     height: 100%;
+    width: 60%;
 }
 
 .img-desc-ctr p {
     font-size: 0.6rem;
     color: var(--clr-white);
     margin-bottom: 0.8rem;
+}
+
+.genres-ctr {
+  display: flex;
+  gap: 30px;
+}
+
+p.genres, p.links {
+  display: inline-block;
+}
+
+p.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+p.links a {
+  text-decoration: none;
+  color: blue
 }
 
 .img-desc-ctr .divider {
@@ -71,7 +91,7 @@ p {
     text-align: center;
 }
 
-.img-desc-ctr a {
+a.btn {
     text-decoration: none;
     display: flex;
     text-align: center;

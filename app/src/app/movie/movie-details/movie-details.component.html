@@ -14,7 +14,6 @@
                 <p>Year: {{movie.year}}</p>
             </div>
         </div>
-    
     </section>
     
     <section *ngIf="movie">
@@ -24,20 +23,26 @@
             <div class="description">
                 <p class="plot">{{movie.plot}}</p>
                 <div class="divider"></div>
-                <p class="genres">Genre: <span><a *ngFor="let genre of movie.genres" routerLink="/movies/all/byGenre/{{genre._id}}">{{genre.title}}</a></span></p>
+                <div class="genres-ctr">
+                    <p class="genres">Genre: </p>
+                    <p class="links">
+                        <a *ngFor="let genre of movie.genres" routerLink="/movies/all/byGenre/{{genre._id}}">{{genre.title}}</a>
+                    </p>
+                </div>
                 <div class="divider"></div>
                 <p class="writers">Writers: {{movie.writer}}</p>
                 <div class="divider"></div>
                 <p class="director">Director: {{movie.director}}</p>
                 <div class="divider last"></div>
-                <a *ngIf="movie.imdbID" class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+                <ng-container *ngTemplateOutlet="movie.imdbID ? imdbID : imdbLink"></ng-container>
+                <ng-template #imdbID>
+                    <a class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+                </ng-template>
+                <ng-template #imdbLink>
+                    <a class="btn" href={{movie.imdbLink}}>Check on IMDB</a>
+                </ng-template>
             </div>
         </div>
-    
-        <app-yt-player [videoID]="trailerId"></app-yt-player>
-
-        <!-- <app-yt-player [videoID]="trailerId"></app-yt-player> -->
     </section>
+    <app-yt-player [videoID]="trailerId"></app-yt-player>
 </div>
-
-  <!-- <script src="https://www.youtube.com/iframe_api"></script> -->

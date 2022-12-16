@@ -17,6 +17,7 @@ export interface IMovie {
     trailerLink: string;
     imdbRating: number;
     imdbID: string;
+    imdbLink: string;
     userId: string;
     created_at: string;
     updatedAt: string;

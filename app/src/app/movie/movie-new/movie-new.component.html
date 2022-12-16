@@ -10,7 +10,7 @@
           </ng-container>
         <div>
             <label for="year">Year:</label>
-            <input type="text" name="year" id="year" #yearInput="ngModel" ngModel required>
+            <input type="number" name="year" id="year" #yearInput="ngModel" ngModel required>
         </div>
         <ng-container *ngIf="yearInput.touched">
             <p class="error" *ngIf="yearInput.errors?.['required']">Year is required!</p>
