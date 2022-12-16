@@ -20,5 +20,9 @@
 </ng-template>
 
 <ng-template #withoutMovies>
-    <h1>there is no movies</h1>
+    <div class="empty-list">
+        <h1>Your list is empty</h1>
+        <p>Check the list and add some movies</p>
+        <button (click)="clearLocalStorageHandler()" routerLink="/movies/all" class="btn btn-ckeck">CHECK THEM NOW</button>
+    </div>
 </ng-template>

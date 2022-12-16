@@ -57,4 +57,10 @@ export class SavedMoviesComponent implements OnInit {
       this.movies = [...this.movies];
       this.checkIfThereIsSavedMovies();
   }
+
+  clearLocalStorageHandler() {
+    if (localStorage.getItem('currentPage')) {
+      localStorage.removeItem('currentPage');
+    }
+  }
 }
