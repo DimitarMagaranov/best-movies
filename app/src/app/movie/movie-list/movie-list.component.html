@@ -1,14 +1,48 @@
-<!-- <div *ngIf="errorFetchingData">Error loading movies</div>
-{{movieList | json}}
-<div class="list">
-    <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of movieList">
-        <div class="img-ctr">
-            <img src={{movie.poster}} alt="">
+<div class="movies-page-ctr">
+    <div *ngIf="errorFetchingData">Error loading movies</div>
+
+    <div class="list-options">
+        <div class="genres-dropdown">
+            <ng-multiselect-dropdown placeholder="Select genre" [settings]="dropdownSettings" [data]="genres" (onSelect)="selectGenreHandler($event)" (onDeSelect)="clearGenreFilter()">
+            </ng-multiselect-dropdown>
+        </div>
+        <div class="view-select" [ngClass]="{ 'my-class': isListView }">
+            <i (click)="toggleListView()" class="fas fa-list"></i>
         </div>
     </div>
-</div> -->
 
-<div class="list">
+    <ng-container *ngTemplateOutlet="isListView ? listView : cardsView"></ng-container>
+
+    <ng-template #cardsView>
+        <div class="cards">
+            <div class="cards-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of filteredMovies">
+                <div class="img-ctr">
+                    <img src="{{ movie.poster }}" alt="" />
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template #listView>
+        <div class="list">
+            <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of filteredMovies">
+                <div class="img-ctr">
+                    <img src="{{ movie.poster }}" alt="" />
+                </div>
+                <div class="title-ctr">
+                    <p>{{movie.title}}</p>
+                </div>
+                <div class="imdb-rating-ctr">
+                    <p>IMDB rating: </p>
+                    <i class="fas fa-star"></i>
+                    <p>{{movie.imdbRating}}/10</p>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>
+
+<!-- <div class="list">
     <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of pageOfItems" >
         <div class="img-ctr">
             <img src={{movie.poster}} alt="">
@@ -35,4 +69,4 @@
                 <a (click)="setPage(pager.totalPages)" class="page-link">Last</a>
             </li>
         </ul>
-    </div>
+    </div> -->

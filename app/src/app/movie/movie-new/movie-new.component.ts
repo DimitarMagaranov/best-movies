@@ -70,7 +70,7 @@ export class MovieNewComponent implements OnInit {
 
     this.dropdownSettings = {
       idField: '_id',
-      textField: 'title',
+      textField: 'title'
     };
 
     this.dropDownForm = this.fb.group({

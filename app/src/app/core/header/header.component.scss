@@ -13,7 +13,7 @@
     text-decoration: none;
 }
 
-.header .mini-navbar .btn-new-movie {
+.btn-new-movie {
   background-color: #FFFFFF;
   border: 1px solid var(--clr-primary);
   border-radius: 8px;
@@ -38,18 +38,18 @@
   width: auto;
 }
 
-.header .mini-navbar .btn-new-movie:focus-visible {
+.btn-new-movie:focus-visible {
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
   transition: box-shadow .2s;
 }
 
-.header .mini-navbar .btn-new-movie:active {
+.btn-new-movie:active {
   background-color: #F7F7F7;
   border-color: #000000;
   transform: scale(.96);
 }
 
-.header .mini-navbar .btn-new-movie:disabled {
+.btn-new-movie:disabled {
   border-color: #DDDDDD;
   color: #DDDDDD;
   cursor: not-allowed;

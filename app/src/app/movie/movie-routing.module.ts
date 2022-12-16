@@ -3,6 +3,7 @@ import { MovieDetailsComponent } from "./movie-details/movie-details.component";
 import { MovieListByGenreComponent } from "./movie-list-by-genre/movie-list-by-genre.component";
 import { MovieListComponent } from "./movie-list/movie-list.component";
 import { MovieNewComponent } from "./movie-new/movie-new.component";
+import { SavedMoviesComponent } from "./saved-movies/saved-movies.component";
 
 const routes: Routes = [
     {
@@ -20,6 +21,10 @@ const routes: Routes = [
     {
         path: 'byGenre/:id',
         component: MovieListByGenreComponent
+    },
+    {
+        path: 'saved',
+        component: SavedMoviesComponent
     }
 ];
 

@@ -1,0 +1,8 @@
+<div class="genres-dropdown">
+  <ng-multiselect-dropdown
+    placeholder="Select genre"
+    [settings]="dropdownSettings"
+    [data]="genres"
+    (onSelect)="selectGenreHandler($event)">
+  </ng-multiselect-dropdown>
+</div>

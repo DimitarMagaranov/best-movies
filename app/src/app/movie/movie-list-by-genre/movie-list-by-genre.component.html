@@ -1,5 +1,9 @@
 <!-- <div *ngIf="errorFetchingData">Error loading movies</div> -->
 <!-- {{movieList | json}} -->
+<div class="list-options">
+    <app-genre-filter></app-genre-filter>
+</div>
+
 <div class="list">
     <div class="list-item" [routerLink]="['/movies/details/', movie._id]" *ngFor="let movie of moviesByGenre">
         <div class="img-ctr">

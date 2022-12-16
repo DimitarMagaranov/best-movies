@@ -1,0 +1,24 @@
+<ng-container *ngTemplateOutlet="isThereSavedMovies ? withMovies : withoutMovies"></ng-container>
+
+<ng-template #withMovies>
+    <div class="list">
+        <div class="list-item" *ngFor="let movie of movies">
+            <div class="img-ctr">
+                <img [routerLink]="['/movies/details/', movie._id]" src="{{ movie.poster }}" alt="" />
+            </div>
+            <div class="title-ctr">
+                <p [routerLink]="['/movies/details/', movie._id]">{{movie.title}}</p>
+            </div>
+            <div class="imdb-rating-ctr">
+                <p>IMDB rating: </p>
+                <i class="fas fa-star"></i>
+                <p>{{movie.imdbRating}}/10</p>
+                <button (click)="removeMovie(movie._id)" class="btn-delete">Remove</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #withoutMovies>
+    <h1>there is no movies</h1>
+</ng-template>

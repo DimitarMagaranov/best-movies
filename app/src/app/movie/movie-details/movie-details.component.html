@@ -10,8 +10,7 @@
                 </div>
             </div>
             <div class="save-year">
-                <i class="far fa-bookmark"></i>
-                <!-- <i class="far fa-bookmark" (click)="toggleMyClass()" [ngClass]="{ 'bookmark-class': bookmarkClass }"></i> -->
+                <i (click)="saveOrUnsaveMovie()" [ngClass]="!isSaved ? 'far fa-bookmark' : 'fas fa-bookmark'"></i>
                 <p>Year: {{movie.year}}</p>
             </div>
         </div>

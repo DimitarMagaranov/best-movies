@@ -7,7 +7,12 @@ import { OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  movies: string[] = [];
+
   ngOnInit(): void {
+    if (!localStorage.getItem('moviesSavedList')) {
+      localStorage.setItem('moviesSavedList', JSON.stringify(this.movies));
+    }
   }
   title = 'app';
 }

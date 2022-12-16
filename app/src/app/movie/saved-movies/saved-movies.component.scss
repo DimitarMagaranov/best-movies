@@ -1,0 +1,27 @@
+.list {
+    padding: 4rem 3rem;
+}
+
+.list .list-item {
+    cursor: default;
+}
+
+.list .list-item .img-ctr, .list .list-item .title-ctr {
+    cursor: pointer;
+}
+
+.list .list-item .title-ctr:hover{
+    color: var(--clr-white);
+}
+
+.btn-delete {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: red;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    color: white;
+    background-color: red;
+}

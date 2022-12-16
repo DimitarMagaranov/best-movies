@@ -14,6 +14,7 @@ export class MovieDetailsComponent implements OnInit {
   errorFetchingData = false;
   trailerId!: string;
 
+  isSaved = false;
   bookmarkClass = 'far fa-bookmark';
 
   constructor(
@@ -40,9 +41,51 @@ export class MovieDetailsComponent implements OnInit {
         console.log(err);
       },
     });
+
+    this.checkIfTheMovieIsSavedByTheUser();
   }
 
-  toggleMyClass(): void {}
+  checkIfTheMovieIsSavedByTheUser(): void {
+    setTimeout(() => {
+      const savedMovies = localStorage.getItem(
+        'moviesSavedList'
+      ) as unknown as string[];
+      const movieId = this.movie?._id as unknown as string;
+      if (savedMovies.indexOf(movieId) > -1) {
+        this.isSaved = true;
+      } else {
+        this.isSaved = false;
+      }
+    }, 100);
+  }
+
+  saveOrUnsaveMovie(): void {
+    if (this.isSaved) {
+      this.unsaveMovie();
+    } else {
+      this.saveMovie();
+    }
+  }
+
+  saveMovie(): void {
+    const movieId = this.movie?._id as unknown as string;
+    let data = localStorage.getItem('moviesSavedList');
+    let moviesData = data ? JSON.parse(data) : [];
+    moviesData.push(movieId);
+    localStorage.setItem('moviesSavedList', JSON.stringify(moviesData));
+
+    this.checkIfTheMovieIsSavedByTheUser();
+  }
+
+  unsaveMovie(): void {
+    const movieId = this.movie?._id as unknown as string;
+    let data = localStorage.getItem('moviesSavedList');
+    let moviesData = data ? JSON.parse(data) : [];
+    moviesData.pop(movieId);
+    localStorage.setItem('moviesSavedList', JSON.stringify(moviesData));
+
+    this.checkIfTheMovieIsSavedByTheUser();
+  }
 
   getTrailerId(url: string): string {
     var regExp =
@@ -58,10 +101,4 @@ export class MovieDetailsComponent implements OnInit {
   getImdbLink(id: string): string {
     return `https://www.imdb.com/title/${id}/?ref_=hm_tpks_tt_i_3_pd_tp1_pbr_ic`;
   }
-
-  // clearCookie() {
-  //   const cookies = this.cookieService.getAll();
-  //   console.log(cookies);
-    
-  // }
 }
