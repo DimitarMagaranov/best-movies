@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, catchError, filter, of, Subscription, tap } from 'rxjs';
+import { IMessage } from '../shared/interfaces/message';
 import { IUser } from '../shared/interfaces/user';
 
 @Injectable({
@@ -56,6 +57,14 @@ export class AuthService implements OnDestroy {
   setProfile(username: string, email: string, tel?: string) {
     return this.http.put<IUser>('/api/users/profile', { username, email, tel })
       .pipe(tap(user => this.user$$.next(user)));
+  }
+
+  getMessages() {
+    return this.http.get<IMessage[]>('/api/messages');
+  }
+
+  deleteMessage(id: string) {
+    return this.http.delete<any>(`/api/messages/delete/${id}`);
   }
 
   ngOnDestroy(): void {

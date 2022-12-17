@@ -35,4 +35,8 @@ export class AdminService {
   loadMovieForApproving(id: string) {
     return this.httpClient.get<IMovie>(`/api/moviesForApproval/${id}`);
   }
+
+  notifyUser(userId: string, movieId: string) {
+    return this.httpClient.post<any>('/api/messages/create', {userId, movieId});
+  }
 }

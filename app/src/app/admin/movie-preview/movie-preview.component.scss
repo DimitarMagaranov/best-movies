@@ -1,0 +1,17 @@
+div.btn-save-ctr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+div.btn-save-ctr .btn-save {
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}

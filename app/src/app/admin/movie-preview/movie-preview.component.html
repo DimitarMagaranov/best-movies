@@ -40,7 +40,9 @@
                 <ng-template #imdbLink>
                     <a class="btn" href={{movie.imdbLink}}>Check on IMDB</a>
                 </ng-template>
-                <button (click)="approveMovie()">Save</button>
+                <div class="btn-save-ctr">
+                    <button class="btn-save" (click)="approveMovie()">Save</button>
+                </div>
             </div>
         </div>
     </section>

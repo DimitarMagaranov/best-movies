@@ -15,6 +15,11 @@
             <p>{{user.email}}</p>
         </div>
         <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+        <div class="divider"></div>
+        <div class="message-ctr" *ngFor="let message of messages">
+            <div class="message">Yor request to upload {{message.movieId.title}} has been approved!</div>
+            <button (click)="deleteMessage(message._id)" class="btn-message"><i class="fas fa-check"></i></button>
+        </div>
     </div>
 </ng-template>
 

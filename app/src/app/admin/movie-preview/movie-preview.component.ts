@@ -6,7 +6,7 @@ import { AdminService } from '../admin.service';
 @Component({
   selector: 'app-movie-preview',
   templateUrl: './movie-preview.component.html',
-  styleUrls: ['../../movie/movie-details/movie-details.component.scss']
+  styleUrls: ['../../movie/movie-details/movie-details.component.scss', './movie-preview.component.scss']
 })
 export class MoviePreviewComponent implements OnInit {
   movie: IMovie | null = null;
@@ -39,7 +39,23 @@ export class MoviePreviewComponent implements OnInit {
 
   approveMovie() {
     this.updateMovie();
+    this.notifyUser();
     this.saveOriginal();
+  }
+
+  notifyUser() {
+    const userId = this.movie?.userId;
+    const movieId = this.movie?._id;
+
+    this.adminService.notifyUser(userId!, movieId!)
+      .subscribe({
+        next: () => {
+          console.log('Notified!');
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
   }
 
   saveOriginal() {
@@ -56,7 +72,8 @@ export class MoviePreviewComponent implements OnInit {
 
     this.adminService.saveMovie(title!, year!, director!, writer!, imgLink!, ytLink!, imdbRating!, imdbLink!, description!, genres!)
     .subscribe({
-      next: () => {
+      next: (value) => {
+        
         this.router.navigate([`/admin/admin`]);
       },
       error: (err) => {
