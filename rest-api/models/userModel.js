@@ -54,7 +54,10 @@ const userSchema = new mongoose.Schema({
     savedMovies: [{
         type: ObjectId,
         ref: "Movie"
-    }]
+    }],
+    messages: {
+        type: [String]
+    }
 }, { timestamps: { createdAt: 'created_at' } });
 
 userSchema.methods = {

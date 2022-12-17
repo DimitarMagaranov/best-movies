@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule)
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
     path: '**',
     redirectTo: '/not-found'
   }

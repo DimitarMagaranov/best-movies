@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-movie-new',
   templateUrl: './movie-new.component.html',
-  styleUrls: ['../../auth/login/login.component.scss'],
+  styleUrls: ['../../auth/login/login.component.scss', './movie-new.component.scss'],
 })
 export class MovieNewComponent implements OnInit {
+  alert: boolean = false;
   dropdownSettings: IDropdownSettings = {};
   dropDownForm!: FormGroup;
 
@@ -47,8 +48,11 @@ export class MovieNewComponent implements OnInit {
     .subscribe({
       next: (movie) => {
         console.log(movie);
+        console.log('SUCCSESS');
         
-        this.router.navigate([`/movies/details/${movie._id}`]);
+        this.alert = true;
+        form.reset();
+        window.scrollTo(0, 0);
       },
       error: (err) => {
         console.log(err);
@@ -76,5 +80,10 @@ export class MovieNewComponent implements OnInit {
     this.dropDownForm = this.fb.group({
       myItems: this.selectedGenres,
     });
+  }
+
+  closeAlert() {
+    this.alert = false;
+    this.router.navigate([`/`]);
   }
 }

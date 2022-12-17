@@ -1,3 +1,9 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> Your data has been send for approval by the admin.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <form #form="ngForm" class="newMovie" (ngSubmit)="newMovieHandler(form)">
     <fieldset>
         <h2>New movie</h2>

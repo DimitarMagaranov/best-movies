@@ -5,7 +5,6 @@ import { MovieRoutingModule } from './movie-routing.module';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieNewComponent } from './movie-new/movie-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {YouTubePlayerModule} from '@angular/youtube-player';
 import { CoreModule } from '../core/core.module';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { GenreFilterComponent } from './genre-filter/genre-filter.component';
@@ -19,7 +18,7 @@ import { SavedMoviesComponent } from './saved-movies/saved-movies.component';
     MovieDetailsComponent,
     MovieNewComponent,
     GenreFilterComponent,
-    SavedMoviesComponent,
+    SavedMoviesComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +26,6 @@ import { SavedMoviesComponent } from './saved-movies/saved-movies.component';
     FormsModule,
     ReactiveFormsModule,
     CoreModule,
-    YouTubePlayerModule,
     NgMultiSelectDropDownModule
   ], exports: [
     MovieListComponent,

@@ -1,0 +1,48 @@
+<div id="details">
+    <section id="movie-details" *ngIf="movie">
+        <div class="header">
+            <div class="title-ctr">
+                <h1 class="title">{{movie.title}}</h1>
+                <div class="imdb-rating-ctr">
+                    <p>IMDB rating: </p>
+                    <i class="fas fa-star"></i>
+                    <p>{{movie.imdbRating}}/10</p>
+                </div>
+            </div>
+            <div class="save-year">
+                <p>Year: {{movie.year}}</p>
+            </div>
+        </div>
+    </section>
+    
+    <section *ngIf="movie">
+        <div class="img-desc-ctr">
+            <img class="image" src="{{movie.poster}}" alt="">
+    
+            <div class="description">
+                <p class="plot">{{movie.plot}}</p>
+                <div class="divider"></div>
+                <div class="genres-ctr">
+                    <p class="genres">Genre: </p>
+                    <p class="links">
+                        <a *ngFor="let genre of movie.genres" routerLink="/movies/all/byGenre/{{genre._id}}">{{genre.title}}</a>
+                    </p>
+                </div>
+                <div class="divider"></div>
+                <p class="writers">Writers: {{movie.writer}}</p>
+                <div class="divider"></div>
+                <p class="director">Director: {{movie.director}}</p>
+                <div class="divider last"></div>
+                <ng-container *ngTemplateOutlet="movie.imdbID ? imdbID : imdbLink"></ng-container>
+                <ng-template #imdbID>
+                    <a class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+                </ng-template>
+                <ng-template #imdbLink>
+                    <a class="btn" href={{movie.imdbLink}}>Check on IMDB</a>
+                </ng-template>
+                <button (click)="approveMovie()">Save</button>
+            </div>
+        </div>
+    </section>
+    <app-yt-player [videoID]="trailerId"></app-yt-player>
+</div>

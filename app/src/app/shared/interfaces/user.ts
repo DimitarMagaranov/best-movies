@@ -8,5 +8,7 @@ export interface IUser {
     password: string;
     created_at: string;
     updatedAt: string;
+    messages: string[];
+    roles: string;
     __v: number;
 }

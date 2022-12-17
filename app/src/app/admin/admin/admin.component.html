@@ -1,0 +1,32 @@
+<div class="for-approving-ctr" *ngIf="moviesForApproving">
+    <h1>Movies for approving</h1>
+    <table class="pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Title</th>
+                <th>IMDB rating</th>
+                <th>Status</th>
+                <th>IMDB Link</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of moviesForApproving; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.imdbRating}}</td>
+                <td>Waiting</td>
+                <td><ng-container *ngTemplateOutlet="movie.imdbID ? imdbID : imdbLink"></ng-container></td>
+                <td><a class="btn preview" routerLink="/admin/movie-preview/{{movie._id}}">Preview</a></td>
+
+                <ng-template #imdbID>
+                    <a class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+                </ng-template>
+                <ng-template #imdbLink>
+                    <a class="btn" href={{movie.imdbLink}}>Check on IMDB</a>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>

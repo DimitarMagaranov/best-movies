@@ -1,0 +1,31 @@
+@import url(https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css);
+
+
+.for-approving-ctr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.for-approving-ctr th {
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    background-color: white;
+}
+
+.for-approving-ctr tr {
+    text-align: center;
+    color: white;
+    font-weight: 100;
+}
+
+.for-approving-ctr .btn.preview {
+    background-color: green;
+    border: none;
+}

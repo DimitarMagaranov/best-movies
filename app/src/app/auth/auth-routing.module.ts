@@ -41,7 +41,7 @@ const routes: Routes = [
             title: 'Profile',
             loginRequired: true
         }
-    },
+    }
 ];
 
 export const AuthRoutingModule = RouterModule.forChild(routes);

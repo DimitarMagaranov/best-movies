@@ -34,6 +34,8 @@ export class MovieDetailsComponent implements OnInit {
     this.movieService.loadMovieById(movieId).subscribe({
       next: (value) => {
         this.movie = value;
+        console.log(value);
+        
         this.trailerId = this.getTrailerId(value.trailerLink);
       },
       error: (err) => {

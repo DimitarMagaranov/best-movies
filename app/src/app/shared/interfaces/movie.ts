@@ -21,4 +21,5 @@ export interface IMovie {
     userId: string;
     created_at: string;
     updatedAt: string;
+    isApproved: boolean;
 }

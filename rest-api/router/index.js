@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const users = require('./users');
 const movies = require('./movies');
+const moviesForApproval = require('./moviesForApproval');
 const genres = require('./genres');
+const admin = require('./admin');
 const test = require('./test');
 const { authController } = require('../controllers');
 
@@ -12,6 +14,8 @@ router.post('/logout', authController.logout);
 router.use('/users', users);
 router.use('/test', test);
 router.use('/movies', movies);
+router.use('/moviesForApproval', moviesForApproval);
 router.use('/genres', genres);
+router.use('/admin', admin);
 
 module.exports = router;

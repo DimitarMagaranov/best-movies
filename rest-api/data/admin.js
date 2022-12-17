@@ -4,7 +4,7 @@ const admin = {
     username: "admin",
     password: "admin123",
     roles: ["admin"],
-    movies: ["638394c61df3175efcf72407", "638394c61df3175efcf72408", "638394c61df3175efcf72409"]
+    movies: []
 };
 
 module.exports = admin;

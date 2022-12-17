@@ -48,8 +48,6 @@ export class MovieService {
     plot: string,
     genres: string[]
   ) {
-    return this.httpClient.post<IMovie>('/api/movies/create', {title, year, director, writer, poster, trailerLink, imdbRating, imdbLink, plot, genres});
+    return this.httpClient.post<IMovie>('/api/moviesForApproval/create', {title, year, director, writer, poster, trailerLink, imdbRating, imdbLink, plot, genres});
   }
-
-  
 }

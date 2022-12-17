@@ -7,7 +7,14 @@
 .header .mini-navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 0.5rem;
+}
+.header .mini-navbar i.user {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: var(--clr-primary);
 }
 .header .mini-navbar .btn {
     text-decoration: none;
@@ -61,7 +68,7 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    padding: 0.5rem var(--p-x); 
+    padding: 0.5rem 0.5rem 0.5rem var(--p-x); 
     z-index: 1000;
 
     display: flex;
