@@ -24,8 +24,8 @@ export class AdminService {
     return this.httpClient.post<IMovie>('/api/movies/create', {title, year, director, writer, poster, trailerLink, imdbRating, imdbLink, plot, genres});
   }
 
-  deleteMovie(id: string) {
-    return this.httpClient.delete<any>(`/api/admin/deleteMovie/${id}`);
+  approveMovie(id: string) {
+    return this.httpClient.put<any>(`/api/admin/approveMovie/${id}`, {});
   }
 
   loadMoviesForApproving() {

@@ -38,7 +38,7 @@ export class MoviePreviewComponent implements OnInit {
   }
 
   approveMovie() {
-    this.deleteTempMovie(this.movie?._id!);
+    this.updateMovie();
     this.saveOriginal();
   }
 
@@ -66,15 +66,14 @@ export class MoviePreviewComponent implements OnInit {
 
   }
 
-  deleteTempMovie(movieId: string) {
-    this.adminService.deleteMovie(movieId)
+  updateMovie() {
+    this.adminService.approveMovie(this.movie?._id!)
     .subscribe({
       next: (value) => {
         console.log(value);
       },
       error: (err) => {
         console.log(err);
-        
       }
     })
   }

@@ -3,6 +3,6 @@ const router = express.Router();
 // const { auth } = require('../utils');
 const { adminController } = require('../controllers');
 
-router.delete('/deleteMovie/:movieId', adminController.deleteMovie);
+router.put('/approveMovie/:movieId', adminController.approveMovie);
 
 module.exports = router;
