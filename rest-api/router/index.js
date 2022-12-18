@@ -7,8 +7,9 @@ const admin = require('./admin');
 const messages = require('./messages');
 const test = require('./test');
 const { authController } = require('../controllers');
+const { verifySignUp } = require('../utils/index');
 
-router.post('/register', authController.register);
+router.post('/register', verifySignUp(), authController.register);
 router.post('/login', authController.login);
 router.post('/logout', authController.logout);
 

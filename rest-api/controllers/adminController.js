@@ -1,4 +1,5 @@
 const { movieForApprovalModel, userModel } = require("../models/index");
+
 function approveMovie(req, res, next) {
   const { movieId } = req.params;
   movieForApprovalModel

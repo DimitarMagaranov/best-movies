@@ -40,4 +40,31 @@ function auth(redirectUnauthenticated = true) {
   };
 }
 
-module.exports = auth;
+function isAdmin() {
+  return function (req, res, next) {
+    const token = req.cookies[authCookieName] || "";
+
+    jwt.verifyToken(token).then((data) => {
+      userModel.findById(data.id).exec((err, user) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+
+        if (user.roles.findIndex("admin") > -1) {
+          next();
+          return;
+        }
+
+        res.status(403).send({ message: "Require Admin Role!" });
+        return;
+      });
+    });
+    next();
+  };
+}
+
+module.exports = {
+  auth,
+  isAdmin,
+};

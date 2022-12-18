@@ -4,7 +4,7 @@ import { MoviePreviewComponent } from "./movie-preview/movie-preview.component";
 
 const routes: Routes = [
     {
-        path: 'admin',
+        path: '',
         component: AdminComponent
     },
     {

@@ -1,0 +1,45 @@
+const userModel = require("../models/userModel");
+
+function verifySignUp() {
+  return function (req, res, next) {
+    // Username
+    userModel.findOne({
+      username: req.body.username,
+    }).exec((err, user) => {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+
+      if (user) {
+        res
+          .status(400)
+          .send({ message: "Failed! Username is already in use!" });
+        return;
+      }
+
+      // Email
+      userModel
+        .findOne({
+          email: req.body.email,
+        })
+        .exec((err, user) => {
+          if (err) {
+            res.status(500).send({ message: err });
+            return;
+          }
+
+          if (user) {
+            res
+              .status(400)
+              .send({ message: "Failed! Email is already in use!" });
+            return;
+          }
+
+          next();
+        });
+    });
+  };
+}
+
+module.exports = verifySignUp;
