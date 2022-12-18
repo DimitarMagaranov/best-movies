@@ -9,7 +9,8 @@
     "movies:import": "node config/seeders/moviesDbSeeder",
     "movies:destroy": "node config/seeders/moviesDbSeeder -d",
     "genres:import": "node config/seeders/genresDbSeeder",
-    "genres:destroy": "node config/seeders/genresDbSeeder -d"
+    "genres:destroy": "node config/seeders/genresDbSeeder -d",
+    "admin:import": "node config/seeders/adminDbSeeder"
   },
   "repository": {
     "type": "git",
