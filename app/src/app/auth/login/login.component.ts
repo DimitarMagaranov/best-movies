@@ -9,6 +9,10 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
@@ -22,12 +26,20 @@ export class LoginComponent {
 
     const { email, password } = form.value;
 
-    this.authService.login(email, password).subscribe((user) => {
-      console.log(user);
-      
-      const returnUrl =
+    this.authService.login(email, password).subscribe({
+      next: () => {
+        const returnUrl =
         this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
         this.router.navigate([returnUrl]);
-    });
+      },
+      error: (err) => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    })
+  }
+
+  closeAlert() {
+    this.isLoginFailed = false;
   }
 }

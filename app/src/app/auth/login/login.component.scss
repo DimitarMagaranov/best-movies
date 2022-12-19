@@ -116,3 +116,10 @@ form.newMovie p.error {
 .input-error {
     border-left-color: red;
 }
+
+// alert
+div.alert.alert-success.fade.show {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 0;
+}

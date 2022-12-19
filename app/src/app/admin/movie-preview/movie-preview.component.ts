@@ -74,7 +74,7 @@ export class MoviePreviewComponent implements OnInit {
     .subscribe({
       next: (value) => {
         
-        this.router.navigate([`/admin/admin`]);
+        this.router.navigate([`/admin`]);
       },
       error: (err) => {
         console.log(err);

@@ -6,7 +6,6 @@
         <label for="email"><span><i class="fas fa-envelope"></i></span></label>
         <input class="input-error" #emailInput="ngModel" ngModel required [appEmailValidator]="[]" type="email" name="email" id="email" placeholder="john.doe@gmail.com"/>
       </p>
-      <!-- {{emailInput.errors | json}} -->
       <ng-container *ngIf="emailInput.touched">
         <p class="error" *ngIf="emailInput.errors?.['required']">Email is required!</p>
         <p class="error" *ngIf="emailInput.errors?.['appEmailValidator']">Email is not valid!</p>
@@ -15,18 +14,20 @@
       <p class="field field-icon"><label for="password"><span><i class="fas fa-lock"></i></span></label>
         <input type="password" #passwordInput="ngModel" ngModel required [minlength]="5" name="password" id="password"  placeholder="******"/>
       </p>
-      <!-- {{passwordInput.errors | json}} -->
       <ng-container *ngIf="passwordInput.touched">
         <p class="error" *ngIf="passwordInput.errors?.['required']">Password is required!</p>
         <p class="error" *ngIf="passwordInput.errors?.['minlength']">Password must be at least 5 characters!</p>
       </ng-container>
   
-      <!-- <input type="file" #files ngmodel required> -->
-  
       <div class="btn-ctr">
         <button [disabled]="form.invalid">Login</button>
       </div>
+
+        <div (click)="closeAlert()" *ngIf="isLoginFailed" class="alert alert-success fade show" role="alert">
+          {{errorMessage}}!
+        </div>
   
       <p class="text-center">Have an account? <a routerLink="/auth/register">Register</a></p>
     </fieldset>
+
   </form>

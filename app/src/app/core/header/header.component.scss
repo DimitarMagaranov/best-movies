@@ -20,49 +20,6 @@
     text-decoration: none;
 }
 
-.btn-new-movie {
-  background-color: #FFFFFF;
-  border: 1px solid var(--clr-primary);
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: var(--clr-primary);
-  cursor: pointer;
-  display: inline-block;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  margin-right: 30px;
-  outline: none;
-  padding: 13px 23px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  touch-action: manipulation;
-  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
-  user-select: none;
-  -webkit-user-select: none;
-  width: auto;
-}
-
-.btn-new-movie:focus-visible {
-  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow .2s;
-}
-
-.btn-new-movie:active {
-  background-color: #F7F7F7;
-  border-color: #000000;
-  transform: scale(.96);
-}
-
-.btn-new-movie:disabled {
-  border-color: #DDDDDD;
-  color: #DDDDDD;
-  cursor: not-allowed;
-  opacity: 1;
-}
-
 .header {
     position: fixed;
     top: 0px;
@@ -80,76 +37,20 @@
     height: 40px; 
 }
 
-// header {
-//     background: rgb(0, 128, 182);
-//     background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
-// }
+.add-btn-ctr {
+  display: flex;
+  gap: 10px;
+  margin-right: 50px;
+}
 
-// header ul {
-//     padding: 0;
-//     display: flex;
-//     align-items: center;
-//     width: 75%;
-//     margin: auto;
-// }
+.btn.btn-add-save {
+  background-color: var(--clr-white);
+  border: 2px solid var(--clr-white);
+  color: var(--clr-primary);
+}
 
-// header ul span {
-//     color: white;
-//     padding: 0.5em;
-// }
-
-// .mini-navbar ul {
-//     border: 1px solid #00d4ff;
-//     border-radius: 0.3em;
-//     padding-left: 0;
-//     width: 100%;
-// }
-
-// header li {
-//     list-style: none;
-//     margin: .35em;
-//     padding: 0 .95em;
-// }
-
-// header a {
-//     text-decoration: none;
-//     color: white;
-//     cursor: pointer;
-// }
-
-// nav {
-//     border-top: 1px solid #00acf4;
-// }
-
-// .logo {
-//     font-size: 1.3em;
-//     color: white;
-//     padding-bottom: 0;
-// }
-
-// .logo-wrap {
-//     font-family: 'Parisienne', cursive;
-//     letter-spacing: .5em;
-//     margin: 0.5em 0;
-// }
-
-// .mini-navbar-wrap {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     width: 75%;
-//     margin: auto;
-// }
-
-// /* mini-navbar */
-
-// .mini-navbar ul {
-//     background-color: #6ba1b8;
-//     border-radius: 5px;
-// }
-
-// .mini-navbar ul li+li {
-//     border-left: 1px solid lightgrey;
-//     padding-left: .5em;
-// }
+.btn.btn-add-save:hover {
+  background-color: var(--clr-primary);
+  border: 2px solid var(--clr-primary);
+  color: var(--clr-white);
+}

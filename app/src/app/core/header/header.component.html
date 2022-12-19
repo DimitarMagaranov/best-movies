@@ -5,17 +5,20 @@
     <ng-container *ngTemplateOutlet="isLoggedIn ? loggedInTemplate : loggedOutTemplate"></ng-container>
 
     <ng-template #loggedOutTemplate>
-      <a class="btn-new-movie" role="button" routerLink="/movies/saved">Saved movies</a>
+      
+      <a class="btn btn-add-save" role="button" routerLink="/movies/saved">Saved movies</a>
       <a class="btn" routerLink="/auth/login">Log In</a>
       <a class="btn" routerLink="/auth/register">Sign In</a>
     </ng-template>
 
     <ng-template #loggedInTemplate>
-      <a class="btn-new-movie" role="button" routerLink="/movies/new">Add movie</a>
-      <a class="btn-new-movie" role="button" routerLink="/movies/saved">Saved movies</a>
+      <div class="add-btn-ctr">
+        <a class="btn btn-add-save" role="button" routerLink="/movies/new">Add movie</a>
+      <a class="btn btn-add-save" role="button" routerLink="/movies/saved">Saved movies</a>
+      </div>
       <a class="btn" routerLink="/auth/logout">Logout</a>
       <i *ngIf="user?.roles =='user'" routerLink="/auth/profile" class="fas fa-user-circle user"></i>
-      <i *ngIf="user?.roles =='admin'" routerLink="/admin" class="fas fa-user-circle user"></i>
+      <a *ngIf="user?.roles =='admin'" routerLink="/admin" class="btn">Admin</a>
     </ng-template>
   </div>
 

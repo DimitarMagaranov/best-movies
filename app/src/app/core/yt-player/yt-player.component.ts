@@ -1,9 +1,17 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-yt-player',
   templateUrl: './yt-player.component.html',
-  styleUrls: ['./yt-player.component.scss']
+  styleUrls: ['./yt-player.component.scss'],
 })
 export class YtPlayerComponent implements AfterViewInit {
   @ViewChild('youTubePlayer') youTubePlayer!: ElementRef<HTMLDivElement>;
@@ -13,21 +21,21 @@ export class YtPlayerComponent implements AfterViewInit {
 
   @Input('videoID') videoID!: string;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   ngAfterViewInit(): void {
     this.onResize();
-    window.addEventListener('resize', this.onResize.bind(this));
+    window.addEventListener('resize', this.onResize);
   }
 
-  onResize(): void {
-        // you can remove this line if you want to have wider video player than 1200px
-    this.videoWidth = Math.min(
-      this.youTubePlayer.nativeElement.clientWidth,
-      1024
-    );
-        // so you keep the ratio
+  onResize = (): void => {
+    // Automatically expand the video to fit the page up to 1200px x 720px
+    this.videoWidth = Math.min(this.youTubePlayer.nativeElement.clientWidth, 1200);
     this.videoHeight = this.videoWidth * 0.6;
-    this.changeDetectorRef.detectChanges();
+    this._changeDetectorRef.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.onResize);
   }
 }

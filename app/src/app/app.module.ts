@@ -11,6 +11,7 @@ import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { API_ERROR } from './shared/constants';
 import { BehaviorSubject } from 'rxjs';
 import { urlInterceptorProvider } from './interceptors/url.interceptor';
+import { httpInterceptorProvider } from './interceptors/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,7 @@ import { urlInterceptorProvider } from './interceptors/url.interceptor';
     BrowserAnimationsModule
   ],
   providers: [
-    urlInterceptorProvider,
-    appInterceptorProvider,
-    {
-      provide: API_ERROR,
-      useValue: new BehaviorSubject(null)
-    }
+    urlInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

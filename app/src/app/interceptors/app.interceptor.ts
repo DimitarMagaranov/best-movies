@@ -25,8 +25,6 @@ export class AppInterceptor implements HttpInterceptor {
         }),
         switchMap(([err, user]) => {
           if (err.status === 401) {
-            console.log(req);
-            
             if (!user) {
               this.router.navigate(['/']);
             } else {

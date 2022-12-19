@@ -63,7 +63,7 @@ function login(req, res, next) {
           secure: true,
         });
       } else {
-        console.log(res.cookie(authCookieName, token, { httpOnly: true }));
+        res.cookie(authCookieName, token, { httpOnly: true });
       }
       res.status(200).send(user);
     })
