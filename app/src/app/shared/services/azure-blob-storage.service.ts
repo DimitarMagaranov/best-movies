@@ -9,6 +9,8 @@ export class AzureBlobStorageService {
   accountName = 'bestmovies';
   containerName = 'pictures';
 
+  uploadedImageUrl!: string;
+
   constructor() { }
 
   public async listImages(): Promise<string[]> {
@@ -41,6 +43,16 @@ export class AzureBlobStorageService {
     blockBlobClient
       .uploadData(content, {blobHTTPHeaders: {blobContentType: content.type}})
       .then(() => handler());
+  };
+
+  public uploadImageAndGetUrlImage(sas: string, content: Blob, name: string, handler: () => void) {
+    const blockBlobClient = this.containerClient(sas).getBlockBlobClient(name);
+    blockBlobClient
+      .uploadData(content, {blobHTTPHeaders: {blobContentType: content.type}})
+      .then((data) => {
+        this.uploadedImageUrl = data._response.request.url;
+        handler();
+      });
   };
 
   private containerClient(sas?: string): ContainerClient {

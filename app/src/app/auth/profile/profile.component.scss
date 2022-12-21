@@ -1,135 +1,188 @@
-
 .profile {
-    width: 100%;
-    max-width: 650px;
-    margin: 3.5rem auto;
-    padding: 2em;
-    border: 3px solid var(--clr-primary);
-    border-radius: 20px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #444;
-    background-color: #f3f3f3;
-    box-shadow: var(--white-shadow-form);
-    text-align: center;
+  width: 100%;
+  max-width: 650px;
+  margin: 3.5rem auto;
+  padding: 2em;
+  border: 3px solid var(--clr-primary);
+  border-radius: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+  background-color: #e6e6e6;
+  box-shadow: var(--white-shadow-form);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile h3 {
-    text-decoration: underline;
-    margin-bottom: 0.5rem;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
 }
 
-.profile img {
-    width: 7em;
-    height: 7em;
-    margin: auto;
-    display: block;
+.img-ctr {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.img-ctr .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid white;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label.innput-btn {
+  padding: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.img-ctr .innput-btn {
+  color: black;
+  background-color: rgb(177, 177, 177);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: 10px;
+  right: -10px;
 }
 
 .flex {
-    display: flex;
-    font-size: 0.8rem;
+  display: flex;
+  font-size: 0.8rem;
 }
 
 .flex p:first-child {
-    width: 35%;
-    text-align: right;
-    margin: .5em;
+  width: 35%;
+  text-align: right;
+  margin: 0.5em;
 }
 
 .flex p:last-child {
-    width: 55%;
-    text-align: left;
-    margin: .5em;
-    font-weight: bold;
+  width: 55%;
+  text-align: left;
+  margin: 0.5em;
+  font-weight: bold;
 }
 
 .profile button {
-    color: white;
-    border: none;
-    border-radius: 0.3em;
-    padding: 0.6em 1.2em;
-    outline: none;
+  color: white;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.6em 1.2em;
+  outline: none;
 }
 
-.flex > input, .flex > div {
-    width: 55%;
-    text-align: left;
-    margin: .5em;
+.flex > input,
+.flex > div {
+  width: 55%;
+  text-align: left;
+  margin: 0.5em;
 }
 
 .flex > div > input {
-    width: 77%;
+  width: 77%;
 }
 
 .flex select {
-    padding: 0.17em 0;
+  padding: 0.17em 0;
 }
 
 .btns-ctr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .red-button {
-    background-color: red;
+  background-color: red;
 }
 
 .green-button {
-    background-color: green;
+  background-color: green;
 }
 
 .edit-button {
-    background-color: var(--clr-primary);
-    cursor: pointer;
+  background-color: var(--clr-primary);
+  cursor: pointer;
 }
 
 /* errors  */
 
 p.error {
-    text-align: left;
-    border-radius: 0.3em;
-    color: red;
-    padding-top: 0;
+  text-align: left;
+  border-radius: 0.3em;
+  color: red;
+  padding-top: 0;
 }
 
 .input-error {
-    border-left-color: red;
+  border-left-color: red;
 }
 
 //divider
 div.divider {
-    width: 100%;
-    height: 2px;
-    background-color: var(--clr-footer-text);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-footer-text);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 //messages
 div.message-ctr {
-    background-color: rgb(0, 185, 0);
-    color: white;
-    padding: 0 10px;
-    border-radius: 5px;
-    font-size: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+  background-color: rgb(0, 185, 0);
+  color: white;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
 }
 div.message-ctr .message {
-    width: 90%;
-    text-align: left;
+  width: 90%;
+  text-align: left;
 }
 div.message-ctr .btn-message {
-    font-size: 18px;
-    border-radius: 100%;
-    padding: 3px 9px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: red;
-    cursor: pointer;
+  font-size: 18px;
+  border-radius: 100%;
+  padding: 3px 9px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: red;
+  cursor: pointer;
+}
+
+a.update-pic {
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid white;
 }

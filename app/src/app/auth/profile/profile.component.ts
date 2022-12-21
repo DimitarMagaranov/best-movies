@@ -1,51 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MovieService } from 'src/app/movie/movie.service';
 import { IMessage } from 'src/app/shared/interfaces/message';
 import { AzureBlobStorageService } from 'src/app/shared/services/azure-blob-storage.service';
 import { appEmailValidator } from 'src/app/shared/validators/app-email-validator';
 import { AuthService } from '../auth.service';
 import { AZURE_SAS_TOKEN } from 'src/app/shared/constants';
-import { urlInterceptorProvider } from 'src/app/interceptors/url.interceptor';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
-  picturesList: string[] = [];
-  lastPictureUrl!: string;
-  isPictureLoaded = false;
-
+export class ProfileComponent {
+  profilePicUrl: string | undefined;
   showEditMode = false;
   formSubmited = false;
-
   messages: IMessage[] = [];
-  userId!: string;
 
   get user() {
     const { username, email, _id } = this.authService.user!;
-
-    this.userId = _id;
-
-    return {
-      username,
-      email
-    };
+    return {_id, username, email};
   }
 
   form = this.fb.group({
+    _id: [''],
     username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, appEmailValidator()]]
   });
 
   constructor(private authService: AuthService, private fb: FormBuilder, private blobService: AzureBlobStorageService ) {
+    this.profilePicUrl = this.authService.user?.profilePictureUrl;
     this.form.setValue({...this.user});
     this.getMessages();
-  }
-  ngOnInit(): void {
-    this.reloadImagesList();
   }
 
   toggleEditMode(): void {
@@ -73,7 +59,7 @@ export class ProfileComponent implements OnInit {
   getMessages() {
     this.authService.getMessages().subscribe({
       next: (value) => {
-        this.messages = value.filter(x => x.userId == this.userId);
+        this.messages = value.filter(x => x.userId == this.user._id);
       },
       error: (err) => {
         console.log(err);
@@ -96,38 +82,17 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  uploadImageAndGetImageUrl(event: Event) {
-    Promise.all([this.imageSelected(event), this.getLastImageUrl()])
-      .then(() => {
-        console.log('IMAGE UPLOADED');
-      })
-  }
-
-  imageSelected(event: Event) {
+  uploadProfileImage(event: Event) {
     const file = (event.target as HTMLInputElement)?.files?.[0] as File;
-    this.blobService.uploadImage(AZURE_SAS_TOKEN, file, file.name, () => {
-      this.reloadImagesList();
-    })
-  }
-
-  reloadImagesList() {
-    this.blobService.listImages().then(list => {
-      this.picturesList = list;
-    })
-  }
-
-  getLastImageUrl() {
-    const lastPictureName = this.picturesList[0];
-    this.blobService.downloadImage(lastPictureName, blob => {
-      this.lastPictureUrl = window.URL.createObjectURL(blob);
-      this.isPictureLoaded = true;
+    this.blobService.uploadImageAndGetUrlImage(AZURE_SAS_TOKEN, file, file.name, () => {
+      this.profilePicUrl = this.blobService.uploadedImageUrl;
+      this.saveImgUrlToDb();
     })
   }
 
   saveImgUrlToDb() {
-    this.authService.saveProfileImageUrl(this.lastPictureUrl).subscribe((user) => {
-      this.isPictureLoaded = false;
-      console.log(user);
+    this.authService.saveProfileImageUrl(this.profilePicUrl!).subscribe(() => {
+      console.log('Image saved!');
     })
   }
 }
