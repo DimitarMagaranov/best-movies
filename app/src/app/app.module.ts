@@ -12,11 +12,14 @@ import { API_ERROR } from './shared/constants';
 import { BehaviorSubject } from 'rxjs';
 import { urlInterceptorProvider } from './interceptors/url.interceptor';
 import { httpInterceptorProvider } from './interceptors/http.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListFilterPipeForMovies } from './shared/pipes/listFilterPipeForMovies';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticateComponent
+    
   ],
   imports: [
     BrowserModule,

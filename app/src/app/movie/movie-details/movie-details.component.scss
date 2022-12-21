@@ -3,6 +3,10 @@
     margin: 4rem auto;
 }
 
+#movie-details {
+  width: 100%;
+}
+
 #movie-details .header {
   display: flex;
   flex-wrap: wrap;
@@ -40,9 +44,10 @@ p {
 
 .img-desc-ctr {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
     height: 500px;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .img-desc-ctr .description {

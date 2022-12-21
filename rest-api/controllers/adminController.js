@@ -14,6 +14,33 @@ function approveMovie(req, res, next) {
     .catch(next);
 };
 
+function getUsers(req, res, next) {
+  userModel.find()
+  .then((data) => {
+    if (data) {
+      res.status(200).json(data);
+    } else {
+      res.status(204).json({message: 'No content'});
+    }
+  })
+  .catch(next);
+}
+
+function deleteUser(req, res, next) {
+  const {userId} = req.params;
+  userModel.findOneAndDelete({_id: userId})
+    .then((deleted) => {
+      if (deleted) {
+        res.status(200).json({message: 'User is deleted!'});
+      } else {
+        res.status(401).json({ message: `Not allowed!` });
+      }
+    })
+    .catch(next);
+}
+
 module.exports = {
-  approveMovie
+  approveMovie,
+  getUsers,
+  deleteUser
 }

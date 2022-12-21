@@ -1,0 +1,36 @@
+<div class="ctr movies-users-approve-ctr" *ngIf="moviesForApproving">
+    <div (click)="showTable()" class="title-ctr">
+        <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+        <h1 class="title-header">Movies to approve</h1>
+        <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+    </div>
+    <table *ngIf="isHidden == false" class="pure-table pure-table-horizontal">
+        <thead>
+            <tr>
+                <th><p>#</p></th>
+                <th><p>Title</p></th>
+                <th><p>Rating</p></th>
+                <th><p>Status</p></th>
+                <th><p>IMDB Link</p></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="body">
+            <tr *ngFor="let movie of moviesForApproving; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.imdbRating}}</td>
+                <td>Waiting</td>
+                <td><ng-container *ngTemplateOutlet="movie.imdbID ? imdbID : imdbLink"></ng-container></td>
+                <td><a class="btn preview" routerLink="/admin/movie-preview/{{movie._id}}">Preview</a></td>
+
+                <ng-template #imdbID>
+                    <a class="btn" href={{getImdbLink(movie.imdbID)}}>Check on IMDB</a>
+                </ng-template>
+                <ng-template #imdbLink>
+                    <a class="btn" href={{movie.imdbLink}}>Check on IMDB</a>
+                </ng-template>
+            </tr>
+        </tbody>
+    </table>
+</div>

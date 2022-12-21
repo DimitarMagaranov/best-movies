@@ -1,0 +1,26 @@
+.movies-users-approve-ctr{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.for-approving-ctr th {
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    background-color: white;
+}
+
+.for-approving-ctr tr {
+    text-align: center;
+    color: black;
+}
+
+.for-approving-ctr .btn.preview {
+    background-color: green;
+    border: none;
+}
+.for-approving-ctr .btn.preview:hover {
+    color: white;
+}

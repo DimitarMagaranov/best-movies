@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IMovie } from '../shared/interfaces/movie';
+import { IUser } from '../shared/interfaces/user';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,13 @@ export class AdminService {
 
   notifyUser(userId: string, movieId: string) {
     return this.httpClient.post<any>('/api/messages/create', {userId, movieId});
+  }
+
+  loadUsers() {
+    return this.httpClient.get<IUser[]>('/api/users');
+  }
+
+  deleteUser(id: string) {
+    return this.httpClient.delete(`/api/users/${id}`);
   }
 }

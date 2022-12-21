@@ -1,0 +1,82 @@
+<div class="ctr movies-users-approve-ctr">
+    <div (click)="showTable()" class="title-ctr">
+      <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+      <h1  class="title-header">Users</h1>
+      <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+    </div>
+    <div *ngIf="isHidden == false">
+      <form>
+        <div class="search-ctr">
+          <h3>Search user by username:</h3>
+          <input
+            class="form-control ml-2"
+            type="text"
+            name="searchTerm"
+            [(ngModel)]="searchTerm"
+            (input)="search($event)"
+          />
+        </div>
+      </form>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" sortable="name">Username</th>
+            <th scope="col" sortable="area">Email</th>
+            <th scope="col" sortable="area"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let user of $any(users | listFilterForUsers : searchTerm | slice : (page - 1) * pageSize : page * pageSize); index as i">
+            <th scope="row">{{ (page - 1) * pageSize + i + 1 }}</th>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td><button class="btn-delete" (click)="handleClick(user._id)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <ngb-pagination
+        [collectionSize]="collectionSize"
+        [(page)]="page"
+        [boundaryLinks]="true"
+        [pageSize]="20"
+        class="d-flex justify-content-center"
+      >
+        <ng-template ngbPaginationPages let-page let-pages="pages">
+          <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+            <div class="mb-3 d-flex flex-nowrap px-2">
+              <label
+                id="paginationInputLabel"
+                for="paginationInput"
+                class="col-form-label me-2 ms-1"
+                >Page</label
+              >
+              <input
+                #i
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                class="form-control custom-pages-input"
+                id="paginationInput"
+                [value]="page"
+                (keyup.enter)="selectPage(i.value)"
+                (blur)="selectPage(i.value)"
+                (input)="formatInput($any($event).target)"
+                aria-labelledby="paginationInputLabel paginationDescription"
+                style="width: 2.5rem"
+              />
+              <span
+                id="paginationDescription"
+                class="col-form-label text-nowrap px-2"
+              >
+                of {{ pages.length }}</span
+              >
+            </div>
+          </li>
+        </ng-template>
+      </ngb-pagination>
+    </div>
+  </div>
+  

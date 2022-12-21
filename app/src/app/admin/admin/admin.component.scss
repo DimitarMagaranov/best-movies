@@ -1,34 +1,63 @@
 @import url(https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css);
 
-
-.for-approving-ctr{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+.ctr {
     margin-top: 4rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-}
-
-.for-approving-ctr th {
-    text-align: center;
-    color: black;
-    font-weight: 400;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 3rem;
     background-color: white;
+    color: black;
+    border-radius: 7px;
+    overflow: hidden;
+    font-size: 0.7rem;
 }
 
-.for-approving-ctr tr {
-    text-align: center;
-    color: white;
-    font-weight: 100;
+.title-ctr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.for-approving-ctr .btn.preview {
-    background-color: green;
+.title-ctr i {
+    color: black;
+    font-size: 1.2rem;
+}
+
+.title-header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+.btn-delete, .btn-preview {
+    padding: 8px 14px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.for-approving-ctr .btn.preview:hover {
+
+.btn-preview {
+    background-color: green;
     color: white;
+}
+
+.btn-delete {
+    background-color: red;
+    color: white;
+}
+
+th {
+    text-align: center;
+}
+
+tbody {
+    font-size: 1rem;
+}
+
+tbody td, tbody th {
+    vertical-align: middle;
+    text-align: center;
 }

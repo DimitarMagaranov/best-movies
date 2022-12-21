@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IGenre } from '../shared/interfaces/genre';
 import { IMovie } from '../shared/interfaces/movie';
 
@@ -49,5 +50,9 @@ export class MovieService {
     genres: string[]
   ) {
     return this.httpClient.post<IMovie>('/api/moviesForApproval/create', {title, year, director, writer, poster, trailerLink, imdbRating, imdbLink, plot, genres});
+  }
+
+  deleteMovie(id: string) {
+    return this.httpClient.delete(`/api/movies/${id}`);
   }
 }
