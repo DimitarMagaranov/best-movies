@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { TestImageUploadComponent } from './test-image-upload/test-image-upload.component';
 
 
 
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     LoginComponent,
     LogoutComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    TestImageUploadComponent
   ],
   imports: [
     CommonModule,

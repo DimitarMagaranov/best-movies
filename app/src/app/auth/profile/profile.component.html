@@ -20,6 +20,10 @@
             <div class="message">Yor request to upload {{message.movieId.title}} has been approved!</div>
             <button (click)="deleteMessage(message._id)" class="btn-message"><i class="fas fa-check"></i></button>
         </div>
+        <div>
+            <input id="input" type="file" (change)="uploadImageAndGetImageUrl($event)">
+        </div>
+        <button *ngIf="isPictureLoaded" (click)="saveImgUrlToDb()">Save pic</button>
     </div>
 </ng-template>
 

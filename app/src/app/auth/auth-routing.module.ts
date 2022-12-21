@@ -4,6 +4,7 @@ import { LoginComponent } from "./login/login.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegisterComponent } from "./register/register.component";
+import { TestImageUploadComponent } from "./test-image-upload/test-image-upload.component";
 
 const routes: Routes = [
     {
@@ -41,6 +42,10 @@ const routes: Routes = [
             title: 'Profile',
             loginRequired: true
         }
+    },
+    {
+        path: 'test',
+        component: TestImageUploadComponent
     }
 ];
 

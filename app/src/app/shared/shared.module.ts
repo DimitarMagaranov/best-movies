@@ -6,7 +6,7 @@ import { AppEmailDirective } from './validators/app-email.directive';
 
 @NgModule({
   declarations: [
-    AppEmailDirective
+    AppEmailDirective,
   ],
   imports: [
     CommonModule

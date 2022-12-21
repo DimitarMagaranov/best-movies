@@ -1,0 +1,16 @@
+<div class="ctr">
+    <!-- <img src="https://bestmovies.blob.core.windows.net/pictures/pexels-photo-1108099.webp" height="300px" alt=""> -->
+    <h2>Pictures</h2>
+    <table>
+        <tr>
+            <td></td><td><input id="input" type="file" (change)="imageSelected($event)"></td>
+        </tr>
+    </table>
+    <h4>List</h4>
+    <table>
+        <tr *ngFor="let pic of picturesList">
+            <td>{{pic}}</td>
+            <td><button (click)="downloadImage(pic)" download="pic">Download</button></td>
+        </tr>
+    </table>
+</div>

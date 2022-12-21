@@ -10,5 +10,6 @@ export interface IUser {
     updatedAt: string;
     messages: string[];
     roles: string;
+    profilePictureUrl: string;
     __v: number;
 }

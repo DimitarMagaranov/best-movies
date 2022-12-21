@@ -57,6 +57,9 @@ const userSchema = new mongoose.Schema({
     }],
     messages: {
         type: [String]
+    },
+    profilePictureUrl: {
+        type: String
     }
 }, { timestamps: { createdAt: 'created_at' } });
 

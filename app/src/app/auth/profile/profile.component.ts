@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MovieService } from 'src/app/movie/movie.service';
 import { IMessage } from 'src/app/shared/interfaces/message';
+import { AzureBlobStorageService } from 'src/app/shared/services/azure-blob-storage.service';
 import { appEmailValidator } from 'src/app/shared/validators/app-email-validator';
 import { AuthService } from '../auth.service';
+import { AZURE_SAS_TOKEN } from 'src/app/shared/constants';
+import { urlInterceptorProvider } from 'src/app/interceptors/url.interceptor';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+  picturesList: string[] = [];
+  lastPictureUrl!: string;
+  isPictureLoaded = false;
 
   showEditMode = false;
   formSubmited = false;
@@ -34,11 +40,12 @@ export class ProfileComponent {
     email: ['', [Validators.required, appEmailValidator()]]
   });
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private movieService: MovieService ) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private blobService: AzureBlobStorageService ) {
     this.form.setValue({...this.user});
     this.getMessages();
-    console.log(this.messages);
-    
+  }
+  ngOnInit(): void {
+    this.reloadImagesList();
   }
 
   toggleEditMode(): void {
@@ -86,6 +93,41 @@ export class ProfileComponent {
       error: (err) => {
         console.log(err);
       }
+    })
+  }
+
+  uploadImageAndGetImageUrl(event: Event) {
+    Promise.all([this.imageSelected(event), this.getLastImageUrl()])
+      .then(() => {
+        console.log('IMAGE UPLOADED');
+      })
+  }
+
+  imageSelected(event: Event) {
+    const file = (event.target as HTMLInputElement)?.files?.[0] as File;
+    this.blobService.uploadImage(AZURE_SAS_TOKEN, file, file.name, () => {
+      this.reloadImagesList();
+    })
+  }
+
+  reloadImagesList() {
+    this.blobService.listImages().then(list => {
+      this.picturesList = list;
+    })
+  }
+
+  getLastImageUrl() {
+    const lastPictureName = this.picturesList[0];
+    this.blobService.downloadImage(lastPictureName, blob => {
+      this.lastPictureUrl = window.URL.createObjectURL(blob);
+      this.isPictureLoaded = true;
+    })
+  }
+
+  saveImgUrlToDb() {
+    this.authService.saveProfileImageUrl(this.lastPictureUrl).subscribe((user) => {
+      this.isPictureLoaded = false;
+      console.log(user);
     })
   }
 }

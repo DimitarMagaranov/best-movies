@@ -59,6 +59,11 @@ export class AuthService implements OnDestroy {
       .pipe(tap(user => this.user$$.next(user)));
   }
 
+  saveProfileImageUrl(url: string) {
+    return this.http.put<IUser>('/api/users/profile/pic', {profilePictureUrl: url})
+    .pipe(tap(user => this.user$$.next(user)));
+  }
+
   getMessages() {
     return this.http.get<IMessage[]>('/api/messages');
   }

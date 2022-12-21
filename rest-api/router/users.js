@@ -7,6 +7,7 @@ const { adminAuth } = require('../utils');
 router.get('/', auth(), adminAuth(), adminController.getUsers);
 router.get('/profile', auth(),authController.getProfileInfo);
 router.put('/profile', auth(),authController.editProfileInfo);
+router.put('/profile/pic', auth(),authController.editProfilePicture);
 router.delete('/:userId', auth(), adminAuth(), adminController.deleteUser);
 
 module.exports = router

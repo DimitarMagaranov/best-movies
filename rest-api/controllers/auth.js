@@ -111,10 +111,27 @@ function editProfileInfo(req, res, next) {
     .catch(next);
 }
 
+function editProfilePicture(req, res, next) {
+  const { _id: userId } = req.user;
+  const { profilePictureUrl } = req.body;
+
+  userModel
+    .findOneAndUpdate(
+      { _id: userId },
+      { profilePictureUrl },
+      { runValidators: true, new: true }
+    )
+    .then((x) => {
+      res.status(200).json(x);
+    })
+    .catch(next);
+}
+
 module.exports = {
   login,
   register,
   logout,
   getProfileInfo,
   editProfileInfo,
+  editProfilePicture
 };
