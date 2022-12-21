@@ -47,6 +47,10 @@
             <button [disabled]="form.invalid">Create Account</button>
           </div>
 
+          <div (click)="closeAlert()" *ngIf="isRegisterFailed" class="alert alert-success fade show" role="alert">
+            {{errorMessage}}!
+          </div>
+
         <p class="text-center">
             Have an account?
             <a routerLink="/auth/login">Log In</a>

@@ -11,6 +11,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['../login/login.component.scss'],
 })
 export class RegisterComponent {
+  isRegisterFailed = false;
+  errorMessage = '';
+
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
     email: ['', [Validators.required, appEmailValidator()]],
@@ -39,8 +42,24 @@ export class RegisterComponent {
     } = this.form.value;
     this.authService
       .register(username!, email!, password!, rePassword!)
-      .subscribe(() => {
-        this.router.navigate(['/']);
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          this.errorMessage = err.error.message;
+          this.isRegisterFailed = true;
+          if (this.errorMessage.includes('Username')) {
+            this.form.get('username')?.reset();
+          }
+          if (this.errorMessage.includes('Email')) {
+            this.form.get('email')?.reset();
+          }
+        }
       });
+  }
+
+  closeAlert() {
+    this.isRegisterFailed = false;
   }
 }
