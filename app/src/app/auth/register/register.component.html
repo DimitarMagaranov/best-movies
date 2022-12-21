@@ -43,8 +43,14 @@
         password!</p>
         </ng-container>
 
+        <div class="recaptcha-ctr">
+            <re-captcha (resolved)="checkCaptcha($event)"
+                name="recaptchaReactive" ngModel siteKey={{recaptchaSiteKey}}>
+            </re-captcha>
+        </div>
+
         <div class="btn-ctr">
-            <button [disabled]="form.invalid">Create Account</button>
+            <button [disabled]="form.invalid || !captchaResolved">Create Account</button>
           </div>
 
           <div (click)="closeAlert()" *ngIf="isRegisterFailed" class="alert alert-success fade show" role="alert">
@@ -55,6 +61,5 @@
             Have an account?
             <a routerLink="/auth/login">Log In</a>
         </p>
-
     </fieldset>
 </form>

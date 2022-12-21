@@ -1,9 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
 import { IGenre } from 'src/app/shared/interfaces/genre';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { ActivatedRoute } from '@angular/router';
+
+const FILTER_PAG_REGEX = /[^0-9]/g;
 
 @Component({
   selector: 'app-movie-list',
@@ -12,8 +14,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MovieListComponent {
   movies: IMovie[] = [];
-  filteredMovies: IMovie[] = [];
-  errorFetchingData = false;
+  allMovies!: IMovie[];
+  page = 1;
+  pageSize = 20;
+  collectionSize!: number;
   isListView = false;
 
   genreId!: string;
@@ -42,14 +46,26 @@ export class MovieListComponent {
       next: (value) => {
         this.movies = value;
         this.movies = this.movies.sort((a, b) => b.imdbRating - a.imdbRating);
-        this.filteredMovies = this.movies;
+        this.allMovies = this.movies;
+        this.collectionSize = this.movies.length;
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });
   }
+
+	getPageSymbol(current: number) {
+		return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
+	}
+
+	selectPage(page: string) {
+		this.page = parseInt(page, 10) || 1;
+	}
+
+	formatInput(input: HTMLInputElement) {
+		input.value = input.value.replace(FILTER_PAG_REGEX, '');
+	}
 
   loadMoviesByGenreFilter(genreId: string) {
     this.movieService.loadAllMovies().subscribe({
@@ -66,17 +82,18 @@ export class MovieListComponent {
             }
           }
         }
-        this.filteredMovies = moviesByGenre;
+        this.movies = moviesByGenre;
+        this.collectionSize = this.movies.length;
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });
   }
 
   clearGenreFilter() {
-    this.filteredMovies = this.movies;
+    this.movies = this.allMovies;
+    this.collectionSize = this.movies.length;
   }
 
   populateGenresAndGenreDropdownButtonSettings() {
@@ -85,7 +102,6 @@ export class MovieListComponent {
         this.genres = value;
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });
@@ -95,7 +111,7 @@ export class MovieListComponent {
       textField: 'title',
       singleSelection: true,
       allowSearchFilter: true,
-      disabledField: 'asdasd'
+      disabledField: 'asdasd',
     };
   }
 
@@ -108,48 +124,7 @@ export class MovieListComponent {
     this.isListView = !this.isListView;
   }
 
-  // @ViewChildren('paginationNumber') paginationNumbers!: ElementRef[];
-
-  // pager!: {
-  //   pages: number[];
-  //   currentPage: number;
-  //   totalPages: number;
-  // };
-  // pageOfItems: IMovie[] | null = null;
-
-  // constructor(private movieService: MovieService) {
-  //   // start on page 1
-  //   this.setPage(
-  //     (localStorage.getItem('currentPage') as unknown as number) || 1
-  //   );
-  // }
-
-  // setPage(page: number) {
-  //   localStorage.setItem('currentPage', page as unknown as string);
-
-  //   const currPage = String(localStorage.getItem('currentPage'));
-  //   // get new pager object and page of items from the api
-  //   this.movieService.loadMovies(currPage).subscribe({
-  //     next: (value: any) => {
-  //       this.pager = value.pager;
-  //       this.pageOfItems = value.pageOfItems;
-
-  //       this.scrollToTopFn();
-  //     },
-  //     error: (err) => {
-  //       console.log(err);
-  //     },
-  //   });
-  // }
-
-  // scrollToTopFn(): void {
-  //   let scrollToTop = window.setInterval(() => {
-  //     let pos = window.pageYOffset;
-  //     if (pos > 0) {
-  //       window.scrollTo(0, pos - 40); // how far to scroll on each step
-  //     } else {
-  //       window.clearInterval(scrollToTop);
-  //     }
-  //   }, 16);
-  // }
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }

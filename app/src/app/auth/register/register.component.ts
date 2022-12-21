@@ -5,14 +5,20 @@ import { appEmailValidator } from 'src/app/shared/validators/app-email-validator
 import { sameValueGroupValidator } from 'src/app/shared/validators/match-password-group-validator';
 import { AuthService } from '../auth.service';
 
+import {environment} from '../../../environments/environment';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['../login/login.component.scss'],
+  styleUrls: ['../login/login.component.scss', './register.component.scss'],
 })
 export class RegisterComponent {
   isRegisterFailed = false;
   errorMessage = '';
+  recaptchaSiteKey = environment.recaptchaSiteKey;
+  captchaResolved : boolean = false;
+
+  token: string|undefined;
 
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -28,7 +34,13 @@ export class RegisterComponent {
     ),
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.token = undefined;
+  }
+
+  checkCaptcha(captchaResponse : string) {
+    this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
+}
 
   registerHandler(): void {
     if (this.form.invalid) {

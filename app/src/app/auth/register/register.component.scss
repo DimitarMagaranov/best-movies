@@ -1,0 +1,11 @@
+re-captcha.is-invalid > div {
+  border: 1px solid #dc3545 !important;
+  border-radius: 0.2rem;
+}
+
+.recaptcha-ctr {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}

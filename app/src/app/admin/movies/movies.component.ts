@@ -84,4 +84,8 @@ export class MoviesComponent implements OnInit {
           }
         });
   }
+
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }
