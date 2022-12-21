@@ -4,7 +4,7 @@
     <h1  class="title-header">Movies</h1>
     <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
   </div>
-  <div *ngIf="isHidden == false">
+  <div *ngIf="isHidden == false" @fadeIn @fadeOut>
     <form>
       <div class="search-ctr">
         <h6>Search movie by title:</h6>

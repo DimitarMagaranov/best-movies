@@ -1,10 +1,10 @@
 <div class="ctr movies-users-approve-ctr">
-    <div (click)="showTable()" class="title-ctr">
+    <div (click)="fadeInOut()" class="title-ctr">
       <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
       <h1  class="title-header">Users</h1>
       <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
     </div>
-    <div *ngIf="isHidden == false">
+    <div @fadeInOut *ngIf="isHidden == false">
       <form>
         <div class="search-ctr">
           <h3>Search user by username:</h3>

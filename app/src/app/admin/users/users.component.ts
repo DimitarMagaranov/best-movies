@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ConfirmDialogService } from 'src/app/material/confirm-dialog.service';
 import { IUser } from 'src/app/shared/interfaces/user';
@@ -5,10 +6,50 @@ import { AdminService } from '../admin.service';
 
 const FILTER_PAG_REGEX = /[^0-9]/g;
 
+//with state
+// const fadeInOut = trigger('fadeInOut', [
+//   state('open', style({opacity: 1})),
+//   state('close', style({opacity: 0})),
+//   transition('open => close', [animate('500ms ease-out')]),
+//   transition('close => open', [animate('500ms ease-in')]),
+// ]);
+
+//normal
+// const enterTransition = transition(':enter', [
+//   style({
+//     opacity: 0,
+//   }),
+//   animate('500ms ease-in', style({opacity: 1})),
+// ]);
+// const exitTransition = transition(':leave', [
+//   style({
+//     opacity: 1,
+//   }),
+//   animate('500ms ease-out', style({opacity: 0})),
+// ]);
+// const fadeIn = trigger('fadeIn', [enterTransition]);
+// const fadeOut = trigger('fadeOut', [exitTransition]);
+
+//with wild card
+// const fadeInOut = trigger('fadeInOut', [
+//   state('open', style({opacity: 1})),
+//   state('close', style({opacity: 0})),
+//   transition('open => *', [animate('500ms ease-out')]),
+//   transition('* => open', [animate('500ms ease-in')]),
+// ]);
+
+//with void state
+const fadeInOut = trigger('fadeInOut', [
+  state('in', style({opacity: 1})),
+  transition('void => *', [style({opacity: 0}), animate('500ms ease-out')]),
+  transition('* => void', [animate('500ms ease-out'), style({opacity: 0})])
+])
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['../admin/admin.component.scss','./users.component.scss']
+  styleUrls: ['../admin/admin.component.scss','./users.component.scss'],
+  animations: [fadeInOut]
 })
 export class UsersComponent implements OnInit {
 
@@ -52,7 +93,7 @@ export class UsersComponent implements OnInit {
 		input.value = input.value.replace(FILTER_PAG_REGEX, '');
 	}
 
-  showTable() {
+  fadeInOut() {
     this.isHidden = !this.isHidden;
   }
 

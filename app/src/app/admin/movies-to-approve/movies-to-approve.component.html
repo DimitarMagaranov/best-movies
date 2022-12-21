@@ -1,10 +1,10 @@
 <div class="ctr movies-users-approve-ctr" *ngIf="moviesForApproving">
-    <div (click)="showTable()" class="title-ctr">
+    <div (click)="fadeInOut()" class="title-ctr">
         <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
         <h1 class="title-header">Movies to approve</h1>
         <i [ngClass]="isHidden ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
     </div>
-    <table *ngIf="isHidden == false" class="pure-table pure-table-horizontal">
+    <table *ngIf="isHidden == false" @fadeIn @fadeOut class="pure-table pure-table-horizontal">
         <thead>
             <tr>
                 <th><p>#</p></th>

@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ConfirmDialogService } from 'src/app/material/confirm-dialog.service';
@@ -7,10 +8,26 @@ import { IMovie } from 'src/app/shared/interfaces/movie';
 
 const FILTER_PAG_REGEX = /[^0-9]/g;
 
+const enterTransition = transition(':enter', [
+  style({
+    opacity: 0,
+  }),
+  animate('500ms ease-in', style({opacity: 1})),
+]);
+const exitTransition = transition(':leave', [
+  style({
+    opacity: 1,
+  }),
+  animate('500ms ease-out', style({opacity: 0})),
+]);
+const fadeIn = trigger('fadeIn', [enterTransition]);
+const fadeOut = trigger('fadeOut', [exitTransition]);
+
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['../admin/admin.component.scss','./movies.component.scss']
+  styleUrls: ['../admin/admin.component.scss','./movies.component.scss'],
+  animations: [fadeIn, fadeOut]
 })
 export class MoviesComponent implements OnInit {
 
