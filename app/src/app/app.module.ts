@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { urlInterceptorProvider } from './interceptors/url.interceptor';
+import { errorInterceptorProvider } from './interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { urlInterceptorProvider } from './interceptors/url.interceptor';
     BrowserAnimationsModule
   ],
   providers: [
-    urlInterceptorProvider
+    urlInterceptorProvider,
+    errorInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
