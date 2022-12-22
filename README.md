@@ -48,5 +48,5 @@ Front-End:
 ------------
 
 ## Login as admin:
-- admin@admin.com
-- admin123
+email    - admin@admin.com
+password - admin123
