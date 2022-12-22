@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuthenticateComponent } from './authenticate.component';
 
-describe('AuthenticateComponent', () => {
+xdescribe('AuthenticateComponent', () => {
   let component: AuthenticateComponent;
   let fixture: ComponentFixture<AuthenticateComponent>;
 

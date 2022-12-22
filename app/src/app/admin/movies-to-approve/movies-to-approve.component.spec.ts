@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoviesToApproveComponent } from './movies-to-approve.component';
 
-describe('MoviesToApproveComponent', () => {
+xdescribe('MoviesToApproveComponent', () => {
   let component: MoviesToApproveComponent;
   let fixture: ComponentFixture<MoviesToApproveComponent>;
 
