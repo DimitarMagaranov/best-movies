@@ -42,6 +42,7 @@
     height: 400px;
     overflow: hidden;
     border-radius: 15px;
+    border: 2px solid rgb(169, 169, 169);
     
     cursor: pointer;
     transform: scale(1);
@@ -52,7 +53,7 @@
 }
 
 .cards .cards-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     bottom: 0.125rem;
     box-shadow: var(--white-shadow-xl);
 }
@@ -78,13 +79,14 @@
   color: var(--clr-footer-text);
   padding: 0 1rem;
   border-radius: 10px;
-  background-color: rgb(24, 24, 24);
+  background-color: black;
   cursor: pointer;
   border: 0.5px solid var(--clr-footer-text);
   transition: all 300ms ease-in-out;
 }
 .list .list-item:hover {
   border: 0.5px solid var(--clr-primary);
+  color: var(--clr-primary);
 }
 
 .list .img-ctr {
