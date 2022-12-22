@@ -29,9 +29,14 @@
 #footer a {
   color: var(--clr-footer-text);
   font-size: 22px;
+  width: 150px;
   padding: 5px 10px;
   background-color: var(--clr-grey);
   border-radius: 5px;
+  text-align: center;
+}
+#footer .links a:first-child {
+  margin-right: 10px;
 }
 #footer a:hover {
   text-decoration: none;

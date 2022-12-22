@@ -12,6 +12,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     if (!localStorage.getItem('moviesSavedList')) {
       localStorage.setItem('moviesSavedList', JSON.stringify(this.movies));
+      sessionStorage.setItem('list-view', 'cards');
     }
   }
   title = 'app';

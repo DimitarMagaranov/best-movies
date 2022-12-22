@@ -18,7 +18,7 @@ export class MovieListComponent {
   page = 1;
   pageSize = 20;
   collectionSize!: number;
-  isListView = false;
+  isListView: boolean;
 
   genreId!: string;
   genres: IGenre[] = [];
@@ -31,6 +31,7 @@ export class MovieListComponent {
     this.route.url.subscribe((params) => {
       this.genreId = params[1]?.path;
     });
+    this.isListView = this.sessionStorageListViewValueIsList();
 
     this.populateGenresAndGenreDropdownButtonSettings();
 
@@ -122,6 +123,16 @@ export class MovieListComponent {
 
   toggleListView() {
     this.isListView = !this.isListView;
+
+    if (this.isListView) {
+      sessionStorage.setItem('list-view', 'list');
+    } else {
+      sessionStorage.setItem('list-view', 'cards');
+    }
+  }
+
+  sessionStorageListViewValueIsList(): boolean {
+    return sessionStorage.getItem('list-view') == 'list';
   }
 
   scrollToTop() {
