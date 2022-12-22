@@ -8,7 +8,7 @@
 
 This application has been created solely for educational purposes.
 
-**Best Movies** is an online platform where everyone can find the favourite movie, because it is filled with the best rating movies all over the world. Anyone who is registered can upload a movie to the app if the movie rating is over 8.0 on IMDB. Тhat's why every movie before being uploaded goes through the approval of the admin. The initial dataset is taken from JSON file with the top 100 movies in IMDB.
+**Best Movies** is an online platform where everyone can find the favourite movie, because it is filled with the best rating movies all over the world. Anyone who is registered can upload a movie to the app if the movie rating is over 8.0 on IMDB. Every movie before being uploaded goes through the approval of the admin. The initial dataset is taken from JSON file with the top 100 movies in IMDB.
 
 ## :hammer: ## **Technologies Used**
 
@@ -33,7 +33,7 @@ Front-End:
 
 ------------
 
-## :wrench: How to run the project localy
+## :wrench: How to setup and run the project localy
 - Back-End (open the rest-api directory):
 1. npm install (for install the dependencies)
 2. npm run admin:import (for sedding the admin profile)
@@ -47,6 +47,6 @@ Front-End:
 
 ------------
 
-Login as admin:
+## Login as admin:
 - admin@admin.com
 - admin123
