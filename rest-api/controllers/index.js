@@ -4,6 +4,7 @@ const movieForApprovalController = require('./movieForApprovalController');
 const genreController = require('./genreController');
 const adminController = require('./adminController');
 const messageController = require('./messageController');
+const contactUsController = require('./contactUsController');
 
 module.exports = {
     authController,
@@ -11,5 +12,6 @@ module.exports = {
     genreController,
     movieForApprovalController,
     adminController,
-    messageController
+    messageController,
+    contactUsController
 }

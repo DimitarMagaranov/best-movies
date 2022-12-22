@@ -1,0 +1,40 @@
+<div class="contact-us-ctr">
+    
+    <form #form="ngForm" class="login" (ngSubmit)="contactUsHandler(form)">
+        <fieldset>
+            
+          <h2>CONTACT US</h2>
+          <p class="field field-icon">
+            <label for="username"><span><i class="fas fa-user"></i></span></label>
+            <input class="input-error" #name="ngModel" ngModel required type="text" name="name" id="name" placeholder="John"/>
+          </p>
+            <ng-container *ngIf="name.touched">
+                <p class="error" *ngIf="name.errors?.['required']">Your name is required!</p>
+            </ng-container>
+          <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+            <input class="input-error" #emailInput="ngModel" ngModel required [appEmailValidator]="[]" type="email" name="email" id="email" placeholder="john.doe@gmail.com"/>
+          </p>
+          <ng-container *ngIf="emailInput.touched">
+            <p class="error" *ngIf="emailInput.errors?.['required']">Email is required!</p>
+            <p class="error" *ngIf="emailInput.errors?.['appEmailValidator']">Email is not valid!</p>
+          </ng-container>
+          <p class="field field-icon">
+            <textarea #answerInput="ngModel" class="input-error area" ngModel required name="answer" id="answer" rows="5"></textarea>
+          </p>
+          <ng-container *ngIf="answerInput.touched">
+            <p class="error" *ngIf="answerInput.errors?.['required']">Answer field is required!</p>
+          </ng-container>
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Your answer was send!</strong>
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="btn-ctr">
+            <button [disabled]="form.invalid">Contact us</button>
+          </div>
+        </fieldset>
+    
+      </form>
+</div>

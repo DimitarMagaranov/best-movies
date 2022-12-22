@@ -1,0 +1,21 @@
+.area {
+    width: 100%;
+    flex: 0 1 100%;
+    border: 1px solid var(--clr-primary);
+    padding: 0.3em;
+    border-radius: 0.3rem;
+}
+
+.login {
+    margin-top: 0;
+}
+
+.contact-us-ctr {
+    margin-top: 3rem;
+}
+
+div.alert.alert-success.fade.show button.close {
+    background-color: transparent;
+    color: red;
+    border: none;
+}

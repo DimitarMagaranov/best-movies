@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ContactUsComponent } from './core/contact-us/contact-us.component';
 import { ErrorComponent } from './core/error/error.component';
 import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent
   },
   {
     path: '**',

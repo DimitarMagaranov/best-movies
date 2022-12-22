@@ -5,6 +5,7 @@ const moviesForApproval = require('./moviesForApproval');
 const genres = require('./genres');
 const admin = require('./admin');
 const messages = require('./messages');
+const contactUsMsgs = require('./contactUs');
 const test = require('./test');
 const { authController } = require('../controllers');
 const { verifySignUp } = require('../utils/index');
@@ -20,5 +21,6 @@ router.use('/moviesForApproval', moviesForApproval);
 router.use('/genres', genres);
 router.use('/admin', admin);
 router.use('/messages', messages);
+router.use('/contact-us', contactUsMsgs);
 
 module.exports = router;

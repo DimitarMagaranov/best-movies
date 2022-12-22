@@ -4,6 +4,7 @@ const movieModel = require('./movieModel');
 const movieForApprovalModel = require('./movieForApprovalModel');
 const genreModel = require('./genreModel');
 const messageModel = require('./message');
+const contactUsMsgModel = require('./contactUsMsg');
 
 module.exports = {
     userModel,
@@ -11,5 +12,6 @@ module.exports = {
     movieModel,
     genreModel,
     movieForApprovalModel,
-    messageModel
+    messageModel,
+    contactUsMsgModel
 }
