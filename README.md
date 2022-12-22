@@ -8,7 +8,7 @@
 
 This application has been created solely for educational purposes.
 
-**Best Movies** is an online platform where everyone can find the favourite movie, because it is filled with the best rating movies all over the world. Anyone who is registered can upload a movie to the app if the movie rating is over 8.0 on IMDB. Every movie before being uploaded goes through the approval of the admin. The initial dataset is taken from JSON file with the top 100 movies in IMDB.
+**Best Movies** is an online platform where everyone can find their favourite movie, by reason of it is filled with the best rating movies all over the world. Anyone who is registered can upload a movie to the app if the movie rating is over 8.0 on IMDB. Every movie before being uploaded goes through the approval of the admin. The initial dataset is taken from JSON file with the top 100 movies in IMDB.
 
 ## :hammer: ## **Technologies Used**
 
