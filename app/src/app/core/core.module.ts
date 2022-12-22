@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -22,7 +23,8 @@ import { SharedModule } from '../shared/shared.module';
     HomeComponent,
     YtPlayerComponent,
     ErrorComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
