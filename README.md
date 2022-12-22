@@ -35,14 +35,14 @@ Front-End:
 
 ## :wrench: How to setup and run the project localy
 - Back-End (open the rest-api directory):
-1. npm install (for install the dependencies)
-2. npm run admin:import (for sedding the admin profile)
-3. npm run movies:import (for sedding the movies)
-4. npm run genres:import (for sedding the genres)
+1. npm install (to install the dependencies)
+2. npm run admin:import (to seed the admin profile)
+3. npm run movies:import (to seed the movies)
+4. npm run genres:import (to seed the genres)
 5. npm start
 - Front-End (open the app directory)
-1. npm install (for install the dependencies)
-2. ng s (for run the project)
+1. npm install (to install the dependencies)
+2. ng s (to run the project)
 3. go to http://localhost:4200/
 
 ------------
