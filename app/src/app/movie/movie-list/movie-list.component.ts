@@ -17,7 +17,7 @@ export class MovieListComponent {
   movies: IMovie[] = [];
   allMovies!: IMovie[];
   page = 1;
-  pageSize = 20;
+  pageSize = 25;
   collectionSize!: number;
   isListView: boolean;
 
