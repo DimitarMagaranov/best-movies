@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './core/about-us/about-us.component';
 import { ContactUsComponent } from './core/contact-us/contact-us.component';
-import { ErrorComponent } from './core/error/error.component';
 import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
@@ -15,10 +14,6 @@ const routes: Routes = [
   {
     path: 'not-found',
     component: PageNotFoundComponent
-  },
-  {
-    path: 'error',
-    component: ErrorComponent
   },
   {
     path: 'auth',

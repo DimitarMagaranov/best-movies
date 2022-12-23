@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+
 import { IGenre } from 'src/app/shared/interfaces/genre';
 import { MovieService } from '../movie.service';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-new',
@@ -17,8 +19,6 @@ export class MovieNewComponent implements OnInit {
 
   genres: IGenre[] = [];
   selectedGenres!: IGenre[];
-
-  errorFetchingData = false;
 
   constructor(private movieService: MovieService, private fb: FormBuilder, private router: Router) {}
 
@@ -46,16 +46,12 @@ export class MovieNewComponent implements OnInit {
     // const value = { ...form.value, genres: this.selectedGenres };
     this.movieService.createMovie(title,year,director,writer,poster,trailerLink,imdbRating,imdbLink,plot, genresIds)
     .subscribe({
-      next: (movie) => {
-        console.log(movie);
-        console.log('SUCCSESS');
-        
+      next: () => {
         this.alert = true;
         form.reset();
         window.scrollTo(0, 0);
       },
-      error: (err) => {
-        console.log(err);
+      error: () => {
         this.router.navigate(['/']);
       }
     })
@@ -67,7 +63,6 @@ export class MovieNewComponent implements OnInit {
         this.genres = value;
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });

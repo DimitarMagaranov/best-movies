@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+
 import { IMovie } from 'src/app/shared/interfaces/movie';
 import { MovieService } from '../movie.service';
 

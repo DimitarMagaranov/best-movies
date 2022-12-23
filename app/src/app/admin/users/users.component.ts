@@ -1,10 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+
 import { ConfirmDialogService } from 'src/app/material/confirm-dialog.service';
+import { FILTER_PAG_REGEX } from 'src/app/shared/constants';
 import { IUser } from 'src/app/shared/interfaces/user';
 import { AdminService } from '../admin.service';
-
-const FILTER_PAG_REGEX = /[^0-9]/g;
 
 //with state
 // const fadeInOut = trigger('fadeInOut', [
@@ -60,7 +60,6 @@ export class UsersComponent implements OnInit {
   pageSize = 20;
   collectionSize!: number;
   currentRate = 8;
-
   isHidden = true;
 
   constructor(private adminService: AdminService, private dialogService: ConfirmDialogService) { }
@@ -97,7 +96,7 @@ export class UsersComponent implements OnInit {
     this.isHidden = !this.isHidden;
   }
 
-  handleClick(id: string) {
+  userDeleteDialogHandle(id: string) {
     const options = {
       title: 'Are you sure you want to delete this user?',
       message: '',
@@ -119,5 +118,4 @@ export class UsersComponent implements OnInit {
       this.users = this.users.filter(x => x._id != id);
     });
   };
-  //users/userid
 }

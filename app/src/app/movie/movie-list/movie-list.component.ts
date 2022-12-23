@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+
 import { MovieService } from '../movie.service';
 import { IMovie } from 'src/app/shared/interfaces/movie';
 import { IGenre } from 'src/app/shared/interfaces/genre';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
-import { ActivatedRoute } from '@angular/router';
-
-const FILTER_PAG_REGEX = /[^0-9]/g;
+import { FILTER_PAG_REGEX } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-movie-list',

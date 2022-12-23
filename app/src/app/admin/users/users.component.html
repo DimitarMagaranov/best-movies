@@ -32,7 +32,7 @@
             <th scope="row">{{ (page - 1) * pageSize + i + 1 }}</th>
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
-            <td><button class="btn-delete" (click)="handleClick(user._id)">Delete</button></td>
+            <td><button class="btn-delete" (click)="userDeleteDialogHandle(user._id)">Delete</button></td>
           </tr>
         </tbody>
       </table>

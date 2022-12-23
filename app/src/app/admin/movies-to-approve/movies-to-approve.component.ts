@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { IMovie } from 'src/app/shared/interfaces/movie';
 import { AdminService } from '../admin.service';
 
@@ -27,16 +28,15 @@ const fadeOut = trigger('fadeOut', [exitTransition]);
 export class MoviesToApproveComponent {
   messages!: string[];
   moviesForApproving! : IMovie[];
-
   isHidden = true;
   
   constructor(private adminService: AdminService) {
-    this.loadMoviesForApproving();
+    this.loadMoviesForApproval();
   }
 
   // movies
-  loadMoviesForApproving() {
-    this.adminService.loadMoviesForApproving().subscribe({
+  loadMoviesForApproval() {
+    this.adminService.loadMoviesForApproval().subscribe({
       next: (value) => {
         this.moviesForApproving = value.filter(x => x.isApproved == false);
       },

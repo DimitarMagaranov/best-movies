@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IGenre } from 'src/app/shared/interfaces/genre';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { Router } from '@angular/router';
+
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+
+import { IGenre } from 'src/app/shared/interfaces/genre';
 import { MovieService } from '../movie.service';
 
 @Component({
@@ -13,8 +15,6 @@ export class GenreFilterComponent implements OnInit {
   genres: IGenre[] = [];
   dropdownSettings: IDropdownSettings = {};
 
-  errorFetchingData = false;
-
   constructor(private movieService: MovieService, private router: Router) {}
 
   ngOnInit(): void {
@@ -23,7 +23,6 @@ export class GenreFilterComponent implements OnInit {
         this.genres = value;
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });

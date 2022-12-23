@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { IMovie } from '../shared/interfaces/movie';
 import { IUser } from '../shared/interfaces/user';
 
@@ -29,15 +30,15 @@ export class AdminService {
     return this.httpClient.put<any>(`/api/admin/approveMovie/${id}`, {});
   }
 
-  loadMoviesForApproving() {
+  loadMoviesForApproval() {
     return this.httpClient.get<IMovie[]>(`/api/moviesForApproval/all`);
   }
 
-  loadMovieForApproving(id: string) {
+  loadMovieForApproval(id: string) {
     return this.httpClient.get<IMovie>(`/api/moviesForApproval/${id}`);
   }
 
-  notifyUser(userId: string, movieId: string) {
+  notifyUserForApprovedMovie(userId: string, movieId: string) {
     return this.httpClient.post<any>('/api/messages/create', {userId, movieId});
   }
 

@@ -1,4 +1,5 @@
 import { RouterModule, Routes } from "@angular/router";
+
 import { AdminActivate } from "../shared/guards/admin.activate";
 import { AuthActivate } from "../shared/guards/auth.activate";
 import { AdminComponent } from "./admin/admin.component";

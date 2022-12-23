@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { IMovie } from 'src/app/shared/interfaces/movie';
 import { AdminService } from '../admin.service';
 
@@ -10,11 +11,8 @@ import { AdminService } from '../admin.service';
 })
 export class MoviePreviewComponent implements OnInit {
   movie: IMovie | null = null;
-  errorFetchingData = false;
   trailerId!: string;
-
   isSaved = false;
-  bookmarkClass = 'far fa-bookmark';
   
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,13 +23,12 @@ export class MoviePreviewComponent implements OnInit {
   ngOnInit(): void {
     const movieId = this.activatedRoute.snapshot.params['id'];
 
-    this.adminService.loadMovieForApproving(movieId).subscribe({
+    this.adminService.loadMovieForApproval(movieId).subscribe({
       next: (value) => {
         this.movie = value;
         this.trailerId = this.getTrailerId(value.trailerLink);
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });
@@ -41,46 +38,6 @@ export class MoviePreviewComponent implements OnInit {
     this.updateMovie();
     this.notifyUser();
     this.saveOriginal();
-  }
-
-  notifyUser() {
-    const userId = this.movie?.userId;
-    const movieId = this.movie?._id;
-
-    this.adminService.notifyUser(userId!, movieId!)
-      .subscribe({
-        next: () => {
-          console.log('Notified!');
-        },
-        error: (err) => {
-          console.log(err);
-        }
-      })
-  }
-
-  saveOriginal() {
-    const genres = this.movie?.genres.map(x => x._id);
-    const title = this.movie?.title;
-    const year = this.movie?.year;
-    const director = this.movie?.director;
-    const writer = this.movie?.writer;
-    const imgLink = this.movie?.poster;
-    const ytLink = this.movie?.trailerLink;
-    const imdbRating = this.movie?.imdbRating;
-    const imdbLink = this.movie?.imdbID ? this.getImdbLink(this.movie.imdbID) : this.movie?.imdbLink;
-    const description = this.movie?.plot;
-
-    this.adminService.saveMovie(title!, year!, director!, writer!, imgLink!, ytLink!, imdbRating!, imdbLink!, description!, genres!)
-    .subscribe({
-      next: (value) => {
-        
-        this.router.navigate([`/admin`]);
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    })
-
   }
 
   updateMovie() {
@@ -93,6 +50,44 @@ export class MoviePreviewComponent implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  notifyUser() {
+    const userId = this.movie?.userId;
+    const movieId = this.movie?._id;
+
+    this.adminService.notifyUserForApprovedMovie(userId!, movieId!)
+      .subscribe({
+        next: () => {
+          console.log('Notified!');
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+  }
+
+  saveOriginal() {
+    this.adminService.saveMovie(
+      this.movie?.title!,
+      this.movie?.year!,
+      this.movie?.director!,
+      this.movie?.writer!,
+      this.movie?.poster!,
+      this.movie?.trailerLink!,
+      this.movie?.imdbRating!,
+      this.movie?.imdbID ? this.getImdbLink(this.movie.imdbID) : this.movie?.imdbLink!,
+      this.movie?.plot!,
+      this.movie?.genres.map(x => x._id)!)
+    .subscribe({
+      next: () => {
+        this.router.navigate([`/admin`]);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    })
+
   }
 
   getTrailerId(url: string): string {

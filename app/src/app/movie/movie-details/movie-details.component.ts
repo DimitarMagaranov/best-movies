@@ -11,11 +11,9 @@ import { IMovie } from 'src/app/shared/interfaces/movie';
 })
 export class MovieDetailsComponent implements OnInit {
   movie: IMovie | null = null;
-  errorFetchingData = false;
   trailerId!: string;
 
   isSaved = false;
-  bookmarkClass = 'far fa-bookmark';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -39,7 +37,6 @@ export class MovieDetailsComponent implements OnInit {
         this.trailerId = this.getTrailerId(value.trailerLink);
       },
       error: (err) => {
-        this.errorFetchingData = true;
         console.log(err);
       },
     });

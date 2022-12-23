@@ -7,7 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { YtPlayerComponent } from './yt-player/yt-player.component';
 import {YouTubePlayerModule} from '@angular/youtube-player';
-import { ErrorComponent } from './error/error.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
@@ -22,7 +21,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     PageNotFoundComponent,
     HomeComponent,
     YtPlayerComponent,
-    ErrorComponent,
     ContactUsComponent,
     AboutUsComponent
   ],
@@ -38,8 +36,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     FooterComponent,
     PageNotFoundComponent,
-    YtPlayerComponent,
-    ErrorComponent
+    YtPlayerComponent
   ]
 })
 export class CoreModule { }

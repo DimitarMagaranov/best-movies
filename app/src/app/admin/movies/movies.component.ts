@@ -1,12 +1,10 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ConfirmDialogService } from 'src/app/material/confirm-dialog.service';
-import { ConfirmDialogComponent } from 'src/app/material/confirm-dialog/confirm-dialog.component';
-import { MovieService } from 'src/app/movie/movie.service';
-import { IMovie } from 'src/app/shared/interfaces/movie';
 
-const FILTER_PAG_REGEX = /[^0-9]/g;
+import { ConfirmDialogService } from 'src/app/material/confirm-dialog.service';
+import { MovieService } from 'src/app/movie/movie.service';
+import { FILTER_PAG_REGEX } from 'src/app/shared/constants';
+import { IMovie } from 'src/app/shared/interfaces/movie';
 
 const enterTransition = transition(':enter', [
   style({

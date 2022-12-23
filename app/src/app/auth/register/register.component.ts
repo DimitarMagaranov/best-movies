@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { appEmailValidator } from 'src/app/shared/validators/app-email-validator';
 import { sameValueGroupValidator } from 'src/app/shared/validators/match-password-group-validator';
 import { AuthService } from '../auth.service';
-
 import {environment} from '../../../environments/environment';
 
 @Component({
@@ -15,10 +15,9 @@ import {environment} from '../../../environments/environment';
 export class RegisterComponent {
   isRegisterFailed = false;
   errorMessage = '';
+
   recaptchaSiteKey = environment.recaptchaSiteKey;
   captchaResolved : boolean = false;
-
-  token: string|undefined;
 
   form = this.fb.group({
     username: ['', [Validators.required, Validators.minLength(5)]],
@@ -34,9 +33,7 @@ export class RegisterComponent {
     ),
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
-    this.token = undefined;
-  }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
 
   checkCaptcha(captchaResponse : string) {
     this.captchaResolved = (captchaResponse && captchaResponse.length > 0) ? true : false
