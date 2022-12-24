@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/a3070cf6-9de7-4c96-af84-c0bcbd65c827/AppServices/subscriptions/a3070cf6-9de7-4c96-af84-c0bcbd65c827/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/best-movies",
-    "appService.deploySubpath": "rest-api"
-}
