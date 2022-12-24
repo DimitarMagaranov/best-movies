@@ -57,10 +57,6 @@ export class MovieListComponent {
     });
   }
 
-	getPageSymbol(current: number) {
-		return ['A', 'B', 'C', 'D', 'E', 'F', 'G'][current - 1];
-	}
-
 	selectPage(page: string) {
 		this.page = parseInt(page, 10) || 1;
 	}

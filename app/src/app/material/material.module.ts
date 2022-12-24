@@ -5,7 +5,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button'
 import { ConfirmDialogService } from './confirm-dialog.service';
 import { MatDialogRef } from '@angular/material/dialog';
-import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 
 

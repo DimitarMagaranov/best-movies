@@ -7,7 +7,6 @@ import { MovieNewComponent } from './movie-new/movie-new.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { GenreFilterComponent } from './genre-filter/genre-filter.component';
 import { SavedMoviesComponent } from './saved-movies/saved-movies.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -18,7 +17,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MovieListComponent,
     MovieDetailsComponent,
     MovieNewComponent,
-    GenreFilterComponent,
     SavedMoviesComponent
   ],
   imports: [

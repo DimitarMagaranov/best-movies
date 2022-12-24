@@ -43,7 +43,6 @@ export class MovieNewComponent implements OnInit {
       plot,
     } = form.value;
 
-    // const value = { ...form.value, genres: this.selectedGenres };
     this.movieService.createMovie(title,year,director,writer,poster,trailerLink,imdbRating,imdbLink,plot, genresIds)
     .subscribe({
       next: () => {
