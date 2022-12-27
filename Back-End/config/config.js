@@ -8,7 +8,7 @@ const config = {
     },
     production: {
         port: process.env.PORT || 3000,
-        dbURL: process.env.DB_URL_CREDENTIALS,
+        dbURL: 'mongodb://best-movies-db-account:6Vb9eIU5uYVrjUe9tZEiq7dxRnnxGjwXSYn1ehYD3gacQwlyij1lJlgazoJyJhcsXLXwpg8DVP2wACDb3uju9A==@best-movies-db-account.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@best-movies-db-account@',
         origin: []
     }
 };

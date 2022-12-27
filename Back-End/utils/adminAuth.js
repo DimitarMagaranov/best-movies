@@ -1,6 +1,7 @@
 function authAdmin() {
     return function (req, res, next) {
         const user = req.user;
+        console.log(user);
         const role = user.roles[0];
         if (role === "admin") {
             next();
