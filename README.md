@@ -3,6 +3,10 @@
 **Best Movies** is my defense project build with Express and Angular 14 for the **Front-End** course at [SoftUni](https://softuni.bg/ "SoftUni") (September-December 2022).
 
 ------------
+**Access to the application:**
+**[Best-Movies at AZURE](https://best-movies.azurewebsites.net/)**
+
+------------
 
 ## :pencil2: Overview
 
