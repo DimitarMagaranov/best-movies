@@ -1,17 +1,17 @@
-let movies = require('../../data/movies.js');
-const movie = require('../../models/movieModel.js');
+import movies, { map } from '../../data/movies.js';
+import { deleteMany, insertMany } from '../../models/movieModel.js';
 
-const dbConnector = require('../db');
+import dbConnector from '../db';
 
 dbConnector();
 
 const importMovies = async () => {
 	try {
-		await movie.deleteMany();
+		await deleteMany();
 
-		movies = movies.map(obj => ({ ...obj, userId: "639470b26b7b5d69d0d7bdea" }));
+		movies = map(obj => ({ ...obj, userId: "639470b26b7b5d69d0d7bdea" }));
 
-		await movie.insertMany(movies);
+		await insertMany(movies);
 
 		console.log('Data Imported');
 		process.exit();
@@ -23,7 +23,7 @@ const importMovies = async () => {
 
 const deleteMovies = async () => {
 	try {
-		await movie.deleteMany();
+		await deleteMany();
 
 		console.log('Data destroyed');
 		process.exit();

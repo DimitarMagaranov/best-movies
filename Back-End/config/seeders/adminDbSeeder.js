@@ -1,13 +1,13 @@
-const adminData = require('../../data/admin');
-const model = require('../../models/userModel');
+import adminData from '../../data/admin';
+import { create } from '../../models/userModel';
 
-const dbConnector = require('../db');
+import dbConnector from '../db';
 
 dbConnector();
 
 const importAdmin = async () => {
 	try {
-		await model.create(adminData);
+		await create(adminData);
 
 		console.log('admin created');
 		process.exit();

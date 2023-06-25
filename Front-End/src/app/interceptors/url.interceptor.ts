@@ -12,6 +12,8 @@ export class UrlInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.startsWith('/api')) {
       req = req.clone({ url: req.url.replace('/api', apiURL), withCredentials: true })
+      console.log(req);
+      
     }
     return next.handle(req);
   }

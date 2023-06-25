@@ -15,29 +15,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BoogyHS/REST-api.git"
+    "url": "https://github.com/DimitarMagaranov/best-movies/tree/main/Back-End"
   },
   "keywords": [
     "rest-api"
   ],
-  "author": "BoogyHS",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BoogyHS/REST-api/issues"
-  },
-  "homepage": "https://github.com/BoogyHS/REST-api#readme",
+  "author": "Dimitar.Magaranov",
+  "license": "MIT",
+  "homepage": "https://github.com/DimitarMagaranov/best-movies/tree/main/Back-End",
   "dependencies": {
-    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jw-paginate": "^1.0.4",
     "mongoose": "^5.9.19",
     "mongoose-data-seed": "^2.1.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
+  },
+  "engines": {
+    "node": "18.12.1"
   }
 }

@@ -23,6 +23,8 @@ dbConnector()
 
     app.use(errorHandler);
 
-    app.listen(config.port, console.log(`Listening on port ${config.port}!`));
+    app.listen(config.port,
+      // console.log(`Listening on port ${config.port}!`)
+    );
   })
   .catch(console.error);

@@ -1,15 +1,15 @@
-const genres = require('../../data/genres');
-const genre = require('../../models/genreModel.js');
+import genres from '../../data/genres';
+import { deleteMany, insertMany } from '../../models/genreModel.js';
 
-const dbConnector = require('./db');
+import dbConnector from '../db';
 
 dbConnector();
 
 const importGenres = async () => {
 	try {
-		await genre.deleteMany();
+		await deleteMany();
 
-		await genre.insertMany(genres);
+		await insertMany(genres);
 
 		console.log('Genres Imported');
 		process.exit();
@@ -21,7 +21,7 @@ const importGenres = async () => {
 
 const deleteGenres = async () => {
 	try {
-		await genre.deleteMany();
+		await deleteMany();
 
 		console.log('Genres destroyed');
 		process.exit();
